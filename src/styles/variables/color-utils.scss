@@ -1,0 +1,100 @@
+@use "sass:list";
+@use "sass:string";
+@use "sass:map";
+
+@function generateColors($use-cases, $prefix) {
+  $listLight: ();
+  $listDark: ();
+  @each $use-case-name, $use-case in $use-cases {
+    @each $name, $color in $use-case {
+      @if (type-of($color) == 'map') {
+        $lightValue: map.get($color, 'light');
+        $darkValue: map.get($color, 'dark');
+        // light
+        @if $lightValue {
+          $listLight: list.append($listLight, (
+            name: #{--#{$prefix}-#{$name}},
+            value: $lightValue
+          ));
+        }
+        // dark
+        @if $darkValue {
+          $listDark: list.append($listDark, (
+            name: #{--#{$prefix}-#{$name}},
+            value: $darkValue
+          ));
+        }
+
+      } @else if (type-of($color) == 'color' or type-of($color) == 'string') {
+        $listLight: list.append($listLight, (
+          name: #{--#{$prefix}-#{$name}},
+          value: $color,
+        ));
+        $listDark: list.append($listDark, (
+          name: #{--#{$prefix}-#{$name}},
+          value: $color,
+        ));
+      }
+    }
+  }
+  @return (light: $listLight, dark: $listDark);
+}
+
+@function buildRgb($color) {
+  @return #{#{red($color)},#{green($color)},blue($color)};
+}
+
+@mixin placeColors($colorList) {
+  @each $color in $colorList {
+    $name: map.get($color, 'name');
+    $value: map.get($color, 'value');
+    #{$name}: #{$value};
+  }
+}
+
+@mixin colorAppClasses($cases) {
+  @each $name, $colorList in $cases {
+    $color: '';
+    @if (type-of($colorList) == 'list') {
+      $color: list.nth($colorList, 1);
+    } @else {
+      $color: $colorList;
+    }
+    .sui-color-#{$name} {
+      @if (string.index($name, '-border')) {
+        border-color: var(--sui-color-#{$name});
+      }
+      @else if (string.index($name, '-bg')) {
+        background-color: var(--sui-color-#{$name});
+      }
+      @else {
+        color: var(--sui-color-#{$name});
+      }
+    }
+  }
+}
+
+
+
+
+$dark-text-default: #000 !default;
+$light-text-default: #fff !default;
+
+// Calculate brightness of a given color.
+@function brightness($color) {
+  @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+}
+
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+@function color-contrast($color, $dark: $dark-text-default, $light: $light-text-default) {
+  @if $color == null {
+    @return null;
+  }
+  @else {
+    $color-brightness: brightness($color);
+    $light-text-brightness: brightness($light);
+    $dark-text-brightness: brightness($dark);
+
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+  }
+}

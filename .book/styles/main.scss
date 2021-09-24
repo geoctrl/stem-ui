@@ -1,0 +1,33 @@
+@use "sass:map";
+@import "../../src/styles/variables/variables";
+
+// override colors
+$root-background-color: $charcoal;
+
+@import "../../src/styles/global/__global";
+
+// generate colors from use-cases
+$colorMap: generateColors((
+  book: (
+    'app-bg': (light: $cultured, dark: $outer-space),
+    'header-bg': $white,
+    'app-color': (light: $charleston-green, dark: $white),
+    'menu-bg': (light: $alice-blue, dark: $gunmetal),
+    'menu-logo': (light: $charleston-green, dark: $white),
+  )
+), 'book-color');
+$colorLight: map.get($colorMap, 'light');
+$colorDark: map.get($colorMap, 'dark');
+
+:root {
+  @include placeColors($colorLight);
+}
+
+:root[data-theme="dark"] {
+  @include placeColors($colorDark);
+}
+
+body {
+  background-color: var(--book-color-app-bg);
+  color: var(--sui-color-app-primary-text);
+}

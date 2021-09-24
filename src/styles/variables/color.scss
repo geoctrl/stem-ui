@@ -1,0 +1,106 @@
+@use "sass:map";
+@import "color-utils";
+
+// colors
+$ultramarine-blue: #1E5EFF;
+$blue-ribbon: #0045F5;
+$paradise-pink: #EC4067;
+$minion-yellow: #EAD94C;
+$cadet-blue: #51A3A3;
+
+$woodsmoke: #121416;
+$eerie-black: #1C1F22;
+$charleston-green: #25292D;
+$outer-space: #2E3338;
+$gunmetal: #343A40;
+$charcoal: #40474F;
+$davys-grey: #49515A;
+
+
+// blue shades
+$indigo-dye: #2D4562;
+$yInMnBlue: #334E70;
+$bdazzled-blue: #3A587E;
+$chambray: #40628C;
+$queen-blue: #476D9A;
+$blue-yonder: #4D77A8;
+$hippie-blue: #5782B2;
+$glaucous: #658CB8;
+$ship-cove: #7396BF;
+$cerulean-frost: #81A1C5;
+$iceberg: #8FABCC;
+$rock-blue: #9DB6D2;
+$pigeon-post: #ABC0D8;
+$light-steel-blue: #B9CBDF;
+$beau-blue: #C7D6E6;
+$botticelli: #D5E0EC;
+$alice-blue: #E3EAF2;
+$cultured: #F1F5F9;
+$catskill-white: #F8FAFC;
+$white: #FFFFFF;
+
+
+// shades
+$deep-champagne: #FDDAAF;
+$linen: #FFF3E6;
+$bright-lilac: #CC9EFF;
+$lavender-web: #F5EDFF;
+$uranian-blue: #A6DFFE;
+//$alice-blue: #E4F5FF;
+
+// USE CASES
+$use-cases: (
+  app: (
+    "app-primary": $ultramarine-blue,
+    "app-primary-rgb": buildRgb($ultramarine-blue),
+    "app-primary-text": (light: $charleston-green, dark: $white),
+    "app-secondary-text": (light: $charleston-green),
+    "app-inactive-text": (light: $charleston-green),
+    "app-error-text": (light: $paradise-pink),
+    "app-warning-text": (light: $minion-yellow),
+    "app-border": (light: $botticelli),
+    "app-link-text": (light: $ultramarine-blue),
+    "app-icon": (light: $davys-grey),
+  ),
+
+  button: (
+    // default
+    "button-default-text": (light: $charleston-green, dark: $white),
+    "button-default-border": (light: rgba(0,0,0,.2), dark: rgba(255,255,255,.2)),
+    "button-default-focus-border": (light: $botticelli, dark: rgba(255,255,255,.2)),
+    "button-default-hover-bg": (light: rgba(0,0,0,.1), dark: rgba(255,255,255,.1)),
+    "button-default-active-bg": (light: rgba(0,0,0,.2), dark: rgba(255,255,255,.2)),
+
+    // button-primary
+    "button-primary-bg": (light: $ultramarine-blue),
+    "button-primary-hover-bg": (light: $blue-ribbon),
+    "button-primary-text": (light: $white),
+
+    // button-secondary
+    "button-secondary-bg": (light: $charcoal, dark: $bdazzled-blue),
+    "button-secondary-text": (light: $white, dark: $charleston-green),
+    "button-secondary-hover-bg": (light: $charleston-green, dark: $bdazzled-blue),
+
+    // button-danger
+    "button-danger-bg": $paradise-pink,
+    "button-danger-text": $white,
+
+    // button-flat
+    "button-flat-text": (light: $charleston-green, dark: $white),
+  ),
+
+  type: (
+    "type-code-bg": (light: #{'rgba(#{buildRgb($ultramarine-blue)}, .2)'}, dark: rgba(0,0,0,.4)),
+    "type-code-text": (light: $ultramarine-blue, dark: rgba(255,255,255,.8)),
+  ),
+
+  input: (
+    "input-border": (light: $botticelli, dark: $botticelli),
+    "input-bg": (light: $white, dark: 'transparent'),
+    "input-text": (light: $charleston-green, dark: $gunmetal),
+  ),
+
+  form: (
+    "form-error-message-text": (light: $paradise-pink),
+  ),
+);

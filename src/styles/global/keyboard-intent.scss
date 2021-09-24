@@ -1,0 +1,10 @@
+/** only show focus rings for keyboard intent **/
+body:not(.keyboard-intent) button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/** hide body scrolling when modal/overlay is open **/
+body.--modalService-hide-scroll-bar {
+  overflow: hidden;
+}

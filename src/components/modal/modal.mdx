@@ -1,0 +1,28 @@
+import { useState } from 'react';
+import { Button } from '../button/button.component';
+import { Modal } from './modal.component';
+import { WithState } from '@docs/with-state.component';
+
+# Modal
+
+
+<WithState>
+  {() => {
+    const [show, setShow] = useState(false);
+    return (
+      <div className="sui-mb-40">
+        <Button onClick={(e) => setShow(true)}>Open modal</Button>
+        <Modal
+          show={show}
+          onClose={() => setShow(false)}
+        >
+          <Modal.Header title="Do Something" />
+          <Modal.Body>
+            Heyo
+          </Modal.Body>
+          <Modal.Footer>hey</Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }}
+</WithState>

@@ -1,0 +1,21 @@
+@mixin utility {
+  // forms
+  --sui-form-focus-state: 0 0 0 3rem rgba(var(--sui-color-app-primary-rgb), .4);
+  --sui-form-focus-state-inset: inset 0 0 0 .3rem rgba(var(--sui-color-app-primary-rgb), .4);
+  --sui-form-focus-state-dark: 0 0 0 3rem rgba(255, 255, 255, .4);
+  --sui-form-focus-state-dark-inset: inset 0 0 0 3rem rgba(255, 255, 255, .4);
+  --sui-form-transition-duration: 200ms;
+  --sui-form-border-radius: 10rem;
+  --sui-form-height: 36rem;
+  --sui-form-box-shadow: 0 2rem 3rem rgba(0,0,0,.1);
+
+  --sui-dropdown-duration: 200ms;
+
+  // box-shadow
+  --sui-box-shadow-l1: 0 10px 30px -24px #{darken(#fff, 30%)};
+  --sui-box-shadow-l2: 0 10px 40px -24px #{darken(#fff, 33%)};
+  --sui-box-shadow-l3: 0 16px 50px -24px #{darken(#fff, 36%)};
+
+  // border-radius
+  --sui-border-radius: #{$base-border-radius};
+}

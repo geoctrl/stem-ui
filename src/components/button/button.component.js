@@ -25,14 +25,14 @@ export function Button(props) {
   return (
     <button
       {...scope}
-      {...btnProps}
+      role="button"
       className={
         a('sui-button')
           .a(`sui-button--${kind}`, className)
           .m('sui-button--block', block)
           .m('sui-button--icon-only', iconOnly)
       }
-      role="button"
+      {...btnProps}
     >
       {content}
     </button>

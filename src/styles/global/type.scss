@@ -1,19 +1,22 @@
-
 $line-height: 1.625;
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 12rem 0;
   padding: 0;
   line-height: $line-height;
+
+  .sub-text {
+    font-size: .75em;
+  }
 }
 
-h1 {font-size: 2.8em;}
-h2 {font-size: 2.4em;}
-h3 {font-size: 2em;}
-h4 {font-size: 1.6em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: .8em;}
+h1 {font-size: 32rem;}
+h2 {font-size: 27rem;}
+h3 {font-size: 23rem;}
+h4 {font-size: 20rem;}
+h5 {font-size: 17rem;}
+h6 {font-size: 14rem;}
 
 code {
   background-color: var(--sui-color-type-code-bg);
@@ -23,10 +26,17 @@ code {
   font-size: inherit;
   line-height: $line-height;
   font-family: $base-font-family-mono;
+  font-variant-ligatures: normal;
 }
 
 pre {
   font-family: $base-font-family-mono;
+  font-variant-ligatures: normal;
+  border-radius: 4rem;
+
+  code {
+    padding: 0;
+  }
 }
 
 p {

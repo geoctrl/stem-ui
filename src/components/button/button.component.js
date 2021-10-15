@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { useCss, k, a } from 'kremling';
-import { oneOf } from 'prop-types';
-import { Icon } from '@components/icon/icon.component';
+import { Icon } from '../icon/icon.component';
+import { bool, oneOf } from 'prop-types';
 
 export function Button(props) {
   const {
@@ -12,6 +12,8 @@ export function Button(props) {
     iconLeft,
     iconRight,
     iconOnly,
+    small,
+    tag: Tag = 'button',
     ...btnProps
   } = props;
   const scope = useCss(css);
@@ -19,29 +21,32 @@ export function Button(props) {
   let content = children;
 
   if (iconOnly) {
-    content = <Icon name={iconOnly} />
+    content = <Icon size={small ? 20 : 24} name={iconOnly} />
   }
 
   return (
-    <button
+    <Tag
       {...scope}
       role="button"
       className={
         a('sui-button')
-          .a(`sui-button--${kind}`, className)
+          .a(`sui-button--${kind}`)
+          .a(className)
           .m('sui-button--block', block)
           .m('sui-button--icon-only', iconOnly)
+          .m('sui-button--small', small)
+          .toString()
       }
       {...btnProps}
     >
       {content}
-    </button>
+    </Tag>
   );
 }
 
-
 Button.propTypes = {
-  kind: oneOf(['default', 'primary', 'secondary', 'important', 'danger', 'flat']),
+  block: bool,
+  kind: oneOf(['default', 'primary', 'secondary', 'danger', 'flat']),
 };
 
 const css = k`
@@ -54,13 +59,19 @@ const css = k`
     height: var(--sui-form-height);
     padding: 0 16rem;
     font-size: inherit;
-    line-height: 1;
+    line-height: var(--sui-form-height);
+    text-decoration: none;
+    display: inline-flex;
     transition: box-shadow var(--sui-form-transition-duration) ease,
       background-color var(--sui-form-transition-duration) ease,
       color var(--sui-form-transition-duration) ease,
       transform 100ms ease;
     transform: scale(1);
     -webkit-font-smoothing: antialiased;
+    
+    &:hover {
+      text-decoration: none;
+    }
     
     &:focus {
       outline: none;
@@ -75,6 +86,8 @@ const css = k`
       height: var(--sui-form-height);
       width: var(--sui-form-height);
       padding: 0;
+      align-items: center;
+      justify-content: center;
     }
     
     // DEFAULT
@@ -83,7 +96,7 @@ const css = k`
       color: var(--sui-color-button-default-text);
       
       &:hover {
-        background-color: rgba(var(--sui-color-app-primary-rgb), .14);
+        background-color: var(--sui-color-button-default-bg);
       }
       
       &:focus {
@@ -129,13 +142,23 @@ const css = k`
       color: var(--sui-color-button-flat-text);
       
       &:hover {
-        background-color: rgba(var(--sui-color-app-primary-rgb),.14);
+        background-color: var(--sui-color-button-flat-hover-bg);
       }
     }
     
     &.sui-button--block {
       display: block;
       width: 100%;
+    }
+    
+    &.sui-button--small {
+      height: var(--sui-form-height-sm);
+      padding: 0 8rem;
+      
+      &.sui-button--icon-only {
+        width: var(--sui-form-height-sm);
+        padding: 0;
+      }
     }
   }
 `;

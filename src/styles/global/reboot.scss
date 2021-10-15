@@ -1,6 +1,7 @@
 @use 'sass:map';
 
 @import "../variables/color";
+@import "../variables/variables";
 
 *,
 *::before,
@@ -28,7 +29,7 @@ section {
 }
 
 html {
-  font-size: $root-font-size;
+  font-size: $root-font-size-percent;
 }
 
 html, body {
@@ -38,11 +39,11 @@ html, body {
 body {
   margin: 0;
   font-family: $base-font-family;
-  background-color: $root-background-color;
+  background-color: var(--sui-color-app-bg);
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  color: $base-font-color;
+  color: var(--sui-color-app-primary-text);
   text-align: left;
 }
 

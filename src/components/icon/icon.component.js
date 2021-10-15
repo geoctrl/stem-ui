@@ -1,11 +1,16 @@
 import React, { forwardRef } from 'react'
-import { string, object} from 'prop-types';
 import { useCss, k, a } from 'kremling';
 
-
-export const Icon = forwardRef(function Icon({ name, className, fill, style, ...rest }, ref) {
+export const Icon = forwardRef(function Icon(props, ref) {
+  const {
+    name,
+    className,
+    fill,
+    size = 24,
+    style,
+    ...rest
+  } = props;
   const scope = useCss(css);
-  const size = 24;
   return (
     <svg
       ref={ref}
@@ -24,12 +29,6 @@ export const Icon = forwardRef(function Icon({ name, className, fill, style, ...
     </svg>
   );
 });
-
-Icon.propTypes = {
-  name: string,
-  fill: string,
-  style: object,
-};
 
 const css = k`
   .sui-icon {

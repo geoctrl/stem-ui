@@ -13,8 +13,12 @@ module.exports = {
       namespace: 'sui',
       sassOptions: {
         includePaths: [path.resolve(__dirname, 'src/styles')],
-        additionalData: `@import "variables/color";`
+        additionalData: `@import "variables/color";@import "global/breakpoints";`
       }
-    }]
+    }],
+    ['prismjs', {
+      languages: ['javascript', 'jsx'],
+      css: false,
+    }],
   ]
 }

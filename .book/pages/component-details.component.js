@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { useCss, k } from 'kremling';
 
-export function Props({ propTypes }) {
+export function ComponentDetails() {
   const scope = useCss(css);
   return (
     <div {...scope}>
-
+      component details
     </div>
   );
 }
 
-Props.propTypes = {};
+ComponentDetails.propTypes = {};
 
 const css = k`
   

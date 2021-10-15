@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
 import { useCss, a } from 'kremling';
-import { ModalBody } from '@components/modal/modal-body.component';
-import { ModalHeader } from '@components/modal/modal-header.component';
-import { ModalFooter } from '@components/modal/modal-footer.component';
-import { ModalContext } from '@components/modal/modal.context';
-import { useIsMounted } from '@hooks/use-is-mounted.hook';
+import { ModalBody } from './modal-body.component';
+import { ModalHeader } from './modal-header.component';
+import { ModalFooter } from './modal-footer.component';
+import { ModalContext } from './modal.context';
+import { useIsMounted } from '../../hooks/use-is-mounted.hook';
+
+const { useEffect, useState } = React;
 
 const modalAnimationDuration = 600;
 const modalWidth = 428;
@@ -33,8 +35,8 @@ export function Modal({ children, show, onClose, onAfterOpen, onAfterClose }) {
     }
   }, [show]);
 
-  function close(...args) {
-    onClose(...args);
+  function close() {
+    onClose();
     setIsAnimatedIn(false);
   }
 
@@ -58,7 +60,6 @@ export function Modal({ children, show, onClose, onAfterOpen, onAfterClose }) {
   );
 }
 
-Modal.propTypes = {};
 
 Modal.Header = ModalHeader;
 Modal.Body = ModalBody;

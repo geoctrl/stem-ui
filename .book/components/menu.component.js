@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCss, k } from 'kremling';
-import { Button } from '@components/button/button.component';
 
 export function Menu({ components }) {
   const scope = useCss(css);
@@ -19,8 +18,10 @@ export function Menu({ components }) {
         <input type="checkbox" onChange={onDark} checked={dark} />
       </div>
       <div className="nav">
-        {components.map(comp => (
-          <Link key={comp.title} to={comp.path}>{comp.title}</Link>
+        {components.map((comp) => (
+          <div key={comp.name}>
+            <Link to={`/components${comp.path}`}>{comp.name}</Link>
+          </div>
         ))}
       </div>
     </div>
@@ -32,10 +33,7 @@ Menu.propTypes = {};
 const css = k`
   .menu {
     padding-top: 40rem;
-    left: 0;
-    top: 60rem;
     height: 100%;
-    position: absolute;
     width: 300rem;
     background-color: var(--book-color-menu-bg);
   }

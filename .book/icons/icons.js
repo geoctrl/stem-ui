@@ -1,4 +1,4 @@
 module.exports = [
-  { 'xmark': 'light/xmark.svg' },
-  { 'xmark-small': 'light/xmark-small.svg' },
+  { 'times': 'light/times.svg' },
+  { 'code': 'light/code.svg' },
 ];

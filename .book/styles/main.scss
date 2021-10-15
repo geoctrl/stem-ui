@@ -1,33 +1,45 @@
 @use "sass:map";
-@import "../../src/styles/variables/variables";
 
-// override colors
-$root-background-color: $charcoal;
+// stem styles
+@import "src/styles/global/_global";
+@import "src/styles/variables/color";
+@import "src/styles/variables/utility";
 
-@import "../../src/styles/global/__global";
+// code styles
+@import "./code/coldark-dark";
+@import "./code/coldark-light";
+
 
 // generate colors from use-cases
 $colorMap: generateColors((
   book: (
-    'app-bg': (light: $cultured, dark: $outer-space),
-    'header-bg': $white,
+    'header-bg': (light: $beau-blue, dark: $woodsmoke),
     'app-color': (light: $charleston-green, dark: $white),
     'menu-bg': (light: $alice-blue, dark: $gunmetal),
-    'menu-logo': (light: $charleston-green, dark: $white),
-  )
+    'menu-logo': (light: $yInMnBlue, dark: $white),
+  ),
+  header: (
+    'header-links-text': $yInMnBlue,
+  ),
+  display: (
+    'display-border': (light: $cadet-blue),
+  ),
 ), 'book-color');
-$colorLight: map.get($colorMap, 'light');
-$colorDark: map.get($colorMap, 'dark');
 
 :root {
-  @include placeColors($colorLight);
+  @include var-utility();
+}
+
+:root[data-theme="light"] {
+  @include var-color-light();
+  @include placeColors(map.get($colorMap, 'light'));
 }
 
 :root[data-theme="dark"] {
-  @include placeColors($colorDark);
+  @include var-color-dark();
+  @include placeColors(map.get($colorMap, 'dark'));
 }
 
 body {
-  background-color: var(--book-color-app-bg);
   color: var(--sui-color-app-primary-text);
 }

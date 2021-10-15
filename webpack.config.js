@@ -5,7 +5,7 @@ const IcosetWebpackPlugin = require('@icoset/icoset-webpack-plugin');
 
 module.exports = ({ production }) => {
   return {
-    entry: path.resolve(__dirname, '.book/index.tsx'),
+    entry: path.resolve(__dirname, '.book/index.js'),
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'build/'),
@@ -18,19 +18,21 @@ module.exports = ({ production }) => {
       ? 'source-map'
       : 'eval-source-map',
     resolve: {
+      extensions: [".js"],
       alias: {
-        '@components': path.resolve(__dirname, 'src/components/'),
-        '@docs': path.resolve(__dirname, '.book/doc-helpers/'),
-        '@hooks': path.resolve(__dirname, 'src/hooks/'),
+        '@doc-helpers': path.resolve(__dirname, '.book/doc-helpers/'),
+        'stem-ui/components': path.resolve(__dirname, 'components.js'),
+        'stem-ui/hooks': path.resolve(__dirname, 'hooks.js'),
       },
     },
     module: {
       rules: [
         {
-          test: /\.tsx$/,
+          test: /\.js$/,
           exclude: /node_modules/,
+          resourceQuery: { not: [/raw/] },
           use: [
-            'ts-loader',
+            'babel-loader',
           ],
         },
         {
@@ -70,7 +72,7 @@ module.exports = ({ production }) => {
 
     plugins: [
       new IcosetWebpackPlugin({
-        directory: path.resolve(__dirname, '.book/icons'),
+        directory: path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-pro/svgs'),
         icons: require('./.book/icons/icons'),
       }),
       new HtmlWebpackPlugin({

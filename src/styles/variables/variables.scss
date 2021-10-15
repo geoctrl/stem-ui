@@ -1,32 +1,12 @@
 @use "sass:map";
 
-@import "color";
-@import "color-utils";
-@import "utility";
-
-
-$root-font-size: 6.25%;
+$root-font-size: 6.25;
+$root-font-size-percent: $root-font-size * 1%;
 
 $base-font-family: 'inter', 'Helvetica', 'Arial', sans-serif;
-$base-font-family-mono: 'Fira Code', mono;
+$base-font-family-mono: Hack, mono;
 $base-font-size: 14rem;
-$base-font-color: #404040;
 $base-font-weight: 400;
 $base-line-height: 1.4;
 $base-border-radius: 10rem;
 $base-transition-duration: 200ms;
-
-
-// generate colors from use-cases
-$colorMap: generateColors($use-cases, 'sui-color');
-$colorLight: map.get($colorMap, 'light');
-$colorDark: map.get($colorMap, 'dark');
-
-:root {
-  @include utility();
-  @include placeColors($colorLight);
-}
-
-:root[data-theme="dark"] {
-  @include placeColors($colorDark);
-}

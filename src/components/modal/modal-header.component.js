@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { useCss, k } from 'kremling';
-import { ModalContext } from '@components/modal/modal.context';
-import { Button } from '@components/button/button.component';
+
+import { ModalContext } from './modal.context';
+import { Button } from '../button/button.component';
 
 export function ModalHeader({ title }) {
   const scope = useCss(css);
-  const { onClose } = useContext(ModalContext);
+  const { onClose } = React.useContext(ModalContext);
   return (
     <div {...scope} className="sui-modal--header">
       <h4>{title}</h4>
       <div>
-        <Button onClick={onClose} iconOnly="xmark" btnType="flat" />
+        <Button onClick={onClose} iconOnly="times" btnType="flat" />
       </div>
     </div>
   );

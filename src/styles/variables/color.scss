@@ -2,10 +2,10 @@
 @import "color-utils";
 
 // colors
-$ultramarine-blue: #1E5EFF;
+$blue: #1E5EFF;
 $blue-ribbon: #0045F5;
 $paradise-pink: #EC4067;
-$minion-yellow: #EAD94C;
+$sun-glow: #ffbf1e;
 $cadet-blue: #51A3A3;
 
 $woodsmoke: #121416;
@@ -15,6 +15,7 @@ $outer-space: #2E3338;
 $gunmetal: #343A40;
 $charcoal: #40474F;
 $davys-grey: #49515A;
+$test: #808080;
 
 
 // blue shades
@@ -51,53 +52,58 @@ $uranian-blue: #A6DFFE;
 // USE CASES
 $use-cases: (
   app: (
-    "app-primary": $ultramarine-blue,
-    "app-primary-rgb": buildRgb($ultramarine-blue),
+    "app-primary": (light: $blue, dark: $blue),
+    "app-primary-rgb": (light: buildRgb($blue), dark: buildRgb($blue)),
     "app-primary-text": (light: $charleston-green, dark: $white),
+    "app-bg": (light: $white, dark: $charleston-green),
     "app-secondary-text": (light: $charleston-green),
     "app-inactive-text": (light: $charleston-green),
     "app-error-text": (light: $paradise-pink),
-    "app-warning-text": (light: $minion-yellow),
+    "app-warning-text": (light: $sun-glow),
     "app-border": (light: $botticelli),
-    "app-link-text": (light: $ultramarine-blue),
+    "app-link-text": (light: $blue),
     "app-icon": (light: $davys-grey),
   ),
 
   button: (
     // default
     "button-default-text": (light: $charleston-green, dark: $white),
-    "button-default-border": (light: rgba(0,0,0,.2), dark: rgba(255,255,255,.2)),
-    "button-default-focus-border": (light: $botticelli, dark: rgba(255,255,255,.2)),
-    "button-default-hover-bg": (light: rgba(0,0,0,.1), dark: rgba(255,255,255,.1)),
-    "button-default-active-bg": (light: rgba(0,0,0,.2), dark: rgba(255,255,255,.2)),
+    "button-default-border": (light: rgba($charleston-green,.4), dark: rgba($white,.4)),
+    "button-default-hover-bg": (light: rgba($charleston-green,.2), dark: rgba(255,255,255,.1)),
+    "button-default-active-bg": (light: rgba($charleston-green,.4), dark: rgba(255,255,255,.2)),
 
     // button-primary
-    "button-primary-bg": (light: $ultramarine-blue),
-    "button-primary-hover-bg": (light: $blue-ribbon),
+    "button-primary-bg": (light: $blue, dark: $blue),
+    "button-primary-hover-bg": (light: $blue-ribbon, dark: $blue-ribbon),
     "button-primary-text": (light: $white),
 
     // button-secondary
-    "button-secondary-bg": (light: $charcoal, dark: $bdazzled-blue),
+    "button-secondary-bg": (light: $davys-grey, dark: $alice-blue),
     "button-secondary-text": (light: $white, dark: $charleston-green),
     "button-secondary-hover-bg": (light: $charleston-green, dark: $bdazzled-blue),
 
     // button-danger
-    "button-danger-bg": $paradise-pink,
-    "button-danger-text": $white,
+    "button-danger-bg": (light: $paradise-pink, dark: $paradise-pink),
+    "button-danger-text": (light: $white, dark: $white),
 
     // button-flat
-    "button-flat-text": (light: $charleston-green, dark: $white),
+    "button-flat-text": (light: rgba($charleston-green, .5), dark: $white),
+    "button-flat-hover-bg": (light: rgba($charleston-green, .1), dark: rgba($white, .1)),
   ),
 
   type: (
-    "type-code-bg": (light: #{'rgba(#{buildRgb($ultramarine-blue)}, .2)'}, dark: rgba(0,0,0,.4)),
-    "type-code-text": (light: $ultramarine-blue, dark: rgba(255,255,255,.8)),
+    "type-code-bg": (light: $alice-blue, dark: rgba(0,0,0,.4)),
   ),
 
   input: (
     "input-border": (light: $botticelli, dark: $botticelli),
     "input-bg": (light: $white, dark: 'transparent'),
     "input-text": (light: $charleston-green, dark: $gunmetal),
+  ),
+
+  tab: (
+    "tab-button-hover-bg": (light: rgba($charleston-green, .08)),
+    "tab-button-active-bg": (light: rgba($blue, .1)),
   ),
 
   form: (

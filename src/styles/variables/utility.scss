@@ -1,4 +1,11 @@
-@mixin utility {
+@use "sass:map";
+@use "sass:math";
+
+@import "color";
+@import "color-utils";
+@import "variables";
+
+@mixin var-utility {
   // forms
   --sui-form-focus-state: 0 0 0 3rem rgba(var(--sui-color-app-primary-rgb), .4);
   --sui-form-focus-state-inset: inset 0 0 0 .3rem rgba(var(--sui-color-app-primary-rgb), .4);
@@ -7,6 +14,7 @@
   --sui-form-transition-duration: 200ms;
   --sui-form-border-radius: 10rem;
   --sui-form-height: 36rem;
+  --sui-form-height-sm: 30rem;
   --sui-form-box-shadow: 0 2rem 3rem rgba(0,0,0,.1);
 
   --sui-dropdown-duration: 200ms;
@@ -18,4 +26,14 @@
 
   // border-radius
   --sui-border-radius: #{$base-border-radius};
+}
+
+@mixin var-color-light {
+  $colorMap: generateColors($use-cases, 'sui-color');
+  @include placeColors(map.get($colorMap, 'light'));
+}
+
+@mixin var-color-dark {
+  $colorMap: generateColors($use-cases, 'sui-color');
+  @include placeColors(map.get($colorMap, 'dark'));
 }

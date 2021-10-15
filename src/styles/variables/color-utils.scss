@@ -3,41 +3,23 @@
 @use "sass:map";
 
 @function generateColors($use-cases, $prefix) {
-  $listLight: ();
-  $listDark: ();
+  $returnMap: ();
   @each $use-case-name, $use-case in $use-cases {
-    @each $name, $color in $use-case {
-      @if (type-of($color) == 'map') {
-        $lightValue: map.get($color, 'light');
-        $darkValue: map.get($color, 'dark');
-        // light
-        @if $lightValue {
-          $listLight: list.append($listLight, (
-            name: #{--#{$prefix}-#{$name}},
-            value: $lightValue
-          ));
-        }
-        // dark
-        @if $darkValue {
-          $listDark: list.append($listDark, (
-            name: #{--#{$prefix}-#{$name}},
-            value: $darkValue
-          ));
-        }
+    @each $name, $colorMap in $use-case {
+      @if type-of($colorMap) == map {
+        @each $theme, $color in $colorMap {
+          $themeList: map.get($returnMap, $theme);
+          @if $themeList == null {
+            $themeList: ();
+          }
 
-      } @else if (type-of($color) == 'color' or type-of($color) == 'string') {
-        $listLight: list.append($listLight, (
-          name: #{--#{$prefix}-#{$name}},
-          value: $color,
-        ));
-        $listDark: list.append($listDark, (
-          name: #{--#{$prefix}-#{$name}},
-          value: $color,
-        ));
+          $themeList: list.append($themeList, (#{--#{$prefix}-#{$name}}, $color));
+          $returnMap: map.set($returnMap, $theme, $themeList);
+        }
       }
     }
   }
-  @return (light: $listLight, dark: $listDark);
+  @return $returnMap;
 }
 
 @function buildRgb($color) {
@@ -45,9 +27,7 @@
 }
 
 @mixin placeColors($colorList) {
-  @each $color in $colorList {
-    $name: map.get($color, 'name');
-    $value: map.get($color, 'value');
+  @each $name, $value in $colorList {
     #{$name}: #{$value};
   }
 }
@@ -74,7 +54,12 @@
   }
 }
 
+@function findInBetween($startColor, $endColor, $steps) {
 
+  @for $i from 0 through $steps {
+    $weight: $steps / $i;
+  }
+}
 
 
 $dark-text-default: #000 !default;

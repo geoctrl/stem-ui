@@ -62,7 +62,7 @@ const css = k`
   .header-content {
     height: 60rem;
     padding-top: 60rem;
-    background-color: var(--book-color-header-bg);
+    background-color: var(--color-header-bg);
     transition: height 400ms ease;
     overflow: hidden;
   }
@@ -93,7 +93,7 @@ const css = k`
   
   .logo {
     width: 140rem;
-    fill: var(--book-color-menu-logo);
+    fill: var(--color-menu-logo);
     margin-top: -4rem;
     flex-grow: 0;
     margin-right: 24rem;

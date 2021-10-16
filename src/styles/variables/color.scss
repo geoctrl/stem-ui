@@ -8,27 +8,29 @@ $paradise-pink: #EC4067;
 $sun-glow: #ffbf1e;
 $cadet-blue: #51A3A3;
 
-$woodsmoke: #121416;
-$eerie-black: #1C1F22;
-$charleston-green: #25292D;
-$outer-space: #2E3338;
-$gunmetal: #343A40;
-$charcoal: #40474F;
-$davys-grey: #49515A;
-$test: #808080;
+// grey dark
+$grey-dark-900: #0f1215;
+$grey-dark-800: #181a1d;
+$grey-dark-700: #202225;
+$grey-dark-600: #292b2e;
+$grey-dark-500: #313336;
+$grey-dark-400: #3a3c3f;
+$grey-dark-300: #434548;
+$grey-dark-200: #4c4f52;
+$grey-dark-100: #56585b;
 
+// grey light
+$grey-light-900: #b8bdc1;
+$grey-light-800: #c0c5c8;
+$grey-light-700: #c8ccd0;
+$grey-light-600: #d0d4d7;
+$grey-light-500: #d8dcdf;
+$grey-light-400: #e0e3e6;
+$grey-light-300: #e8ebed;
+$grey-light-200: #f0f2f5;
+$grey-light-100: #f8fafc;
 
-// blue shades
-$indigo-dye: #2D4562;
-$yInMnBlue: #334E70;
-$bdazzled-blue: #3A587E;
-$chambray: #40628C;
-$queen-blue: #476D9A;
-$blue-yonder: #4D77A8;
-$hippie-blue: #5782B2;
-$glaucous: #658CB8;
-$ship-cove: #7396BF;
-$cerulean-frost: #81A1C5;
+// blue shade
 $iceberg: #8FABCC;
 $rock-blue: #9DB6D2;
 $pigeon-post: #ABC0D8;
@@ -48,65 +50,3 @@ $bright-lilac: #CC9EFF;
 $lavender-web: #F5EDFF;
 $uranian-blue: #A6DFFE;
 //$alice-blue: #E4F5FF;
-
-// USE CASES
-$use-cases: (
-  app: (
-    "app-primary": (light: $blue, dark: $blue),
-    "app-primary-rgb": (light: buildRgb($blue), dark: buildRgb($blue)),
-    "app-primary-text": (light: $charleston-green, dark: $white),
-    "app-bg": (light: $white, dark: $charleston-green),
-    "app-secondary-text": (light: $charleston-green),
-    "app-inactive-text": (light: $charleston-green),
-    "app-error-text": (light: $paradise-pink),
-    "app-warning-text": (light: $sun-glow),
-    "app-border": (light: $botticelli),
-    "app-link-text": (light: $blue),
-    "app-icon": (light: $davys-grey),
-  ),
-
-  button: (
-    // default
-    "button-default-text": (light: $charleston-green, dark: $white),
-    "button-default-border": (light: rgba($charleston-green,.4), dark: rgba($white,.4)),
-    "button-default-hover-bg": (light: rgba($charleston-green,.2), dark: rgba(255,255,255,.1)),
-    "button-default-active-bg": (light: rgba($charleston-green,.4), dark: rgba(255,255,255,.2)),
-
-    // button-primary
-    "button-primary-bg": (light: $blue, dark: $blue),
-    "button-primary-hover-bg": (light: $blue-ribbon, dark: $blue-ribbon),
-    "button-primary-text": (light: $white),
-
-    // button-secondary
-    "button-secondary-bg": (light: $davys-grey, dark: $alice-blue),
-    "button-secondary-text": (light: $white, dark: $charleston-green),
-    "button-secondary-hover-bg": (light: $charleston-green, dark: $bdazzled-blue),
-
-    // button-danger
-    "button-danger-bg": (light: $paradise-pink, dark: $paradise-pink),
-    "button-danger-text": (light: $white, dark: $white),
-
-    // button-flat
-    "button-flat-text": (light: rgba($charleston-green, .5), dark: $white),
-    "button-flat-hover-bg": (light: rgba($charleston-green, .1), dark: rgba($white, .1)),
-  ),
-
-  type: (
-    "type-code-bg": (light: $alice-blue, dark: rgba(0,0,0,.4)),
-  ),
-
-  input: (
-    "input-border": (light: $botticelli, dark: $botticelli),
-    "input-bg": (light: $white, dark: 'transparent'),
-    "input-text": (light: $charleston-green, dark: $gunmetal),
-  ),
-
-  tab: (
-    "tab-button-hover-bg": (light: rgba($charleston-green, .08)),
-    "tab-button-active-bg": (light: rgba($blue, .1)),
-  ),
-
-  form: (
-    "form-error-message-text": (light: $paradise-pink),
-  ),
-);

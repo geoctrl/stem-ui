@@ -24,24 +24,24 @@ export function Components({ components }) {
                     <h1>{component.name}</h1>
                     <p>{component.description}</p>
                     <Tab>
-                      <Tab.Link to={`/components${component.path}/props`}>
-                        Props
-                      </Tab.Link>
                       <Tab.Link to={`/components${component.path}/details`}>
                         Details
+                      </Tab.Link>
+                      <Tab.Link to={`/components${component.path}/prop-list`}>
+                        Prop List
                       </Tab.Link>
                     </Tab>
                     <div className="sui-mb-24" />
                     <Switch>
                       <Route
-                        path={`/components${component.path}/props`}
+                        path={`/components${component.path}/prop-list`}
                         render={() => <ComponentProps props={component.props} />}
                       />
                       <Route
                         path={`/components${component.path}/details`}
                         render={() => <ComponentDetails props={component.props} />}
                       />
-                      <Redirect to={`/components${component.path}/props`} />
+                      <Redirect to={`/components${component.path}/details`} />
                     </Switch>
                   </div>
                 );
@@ -61,7 +61,7 @@ const css = k`
     display: flex;
   }
   .component-content {
-    padding: 24rem;
+    padding: 32rem;
     flex-grow: 1;
   }
 `;

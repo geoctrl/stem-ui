@@ -35,7 +35,7 @@ const css = k`
     padding-top: 40rem;
     height: 100%;
     width: 300rem;
-    background-color: var(--book-color-menu-bg);
+    background-color: var(--color-menu-bg);
   }
   .nav {
     padding: 0 16rem;

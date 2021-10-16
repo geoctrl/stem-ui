@@ -6,10 +6,6 @@ export function ComponentProps({ props }) {
   console.log(props)
   return (
     <div {...scope}>
-      {props.map(prop => {
-        const Prop = prop.render;
-        return <Prop key={prop.name} />
-      })}
     </div>
   );
 }

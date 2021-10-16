@@ -43,7 +43,7 @@ const css = k`
     .display__view {
       margin-bottom: 16rem;
       position: relative;
-      border: solid 1rem var(--book-color-display-border);
+      border: solid 1rem var(--color-display-border);
       padding: 16rem;
       border-radius: var(--sui-border-radius);
       

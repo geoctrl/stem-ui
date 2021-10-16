@@ -3,6 +3,7 @@
 // stem styles
 @import "src/styles/global/_global";
 @import "src/styles/variables/color";
+@import "src/styles/use-case/default-themes";
 @import "src/styles/variables/utility";
 
 // code styles
@@ -12,19 +13,19 @@
 
 // generate colors from use-cases
 $colorMap: generateColors((
-  book: (
-    'header-bg': (light: $beau-blue, dark: $woodsmoke),
-    'app-color': (light: $charleston-green, dark: $white),
-    'menu-bg': (light: $alice-blue, dark: $gunmetal),
-    'menu-logo': (light: $yInMnBlue, dark: $white),
+  app: (
+    app-bg: (light: $grey-light-100, dark: $grey-dark-900),
+    header-bg: (light: $grey-light-400, dark: $grey-dark-700),
+    menu-bg: (light: $grey-light-100, dark: $grey-dark-700),
+    menu-logo: (light: $grey-dark-400, dark: $white),
   ),
   header: (
-    'header-links-text': $yInMnBlue,
+    header-links-text: $grey-dark-400,
   ),
   display: (
-    'display-border': (light: $cadet-blue),
+    display-border: (light: $cadet-blue),
   ),
-), 'book-color');
+), color);
 
 :root {
   @include var-utility();
@@ -42,4 +43,5 @@ $colorMap: generateColors((
 
 body {
   color: var(--sui-color-app-primary-text);
+  background-color: var(--color-app-bg);
 }

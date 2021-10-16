@@ -1,0 +1,148 @@
+@use 'sass:map';
+@import "../variables/color";
+
+// USE CASES
+$use-cases: (
+  app: (
+    app-primary: (
+      light: $blue,
+      dark: $blue,
+    ),
+    app-primary-rgb: (
+      light: buildRgb($blue),
+      dark: buildRgb($blue),
+    ),
+    app-primary-text: (
+      light: $grey-dark-900,
+      dark: $white,
+    ),
+    app-bg: (
+      light: $white,
+      dark: $grey-dark-700,
+    ),
+    app-secondary-text: (
+      light: $grey-dark-700,
+    ),
+    app-inactive-text: (
+      light: $grey-dark-300,
+    ),
+    app-error-text: (
+      light: $paradise-pink,
+    ),
+    app-warning-text: (
+      light: $sun-glow,
+    ),
+    app-border: (
+      light: $botticelli,
+    ),
+    app-link-text: (
+      light: $blue,
+    ),
+    app-icon: (
+      light: $grey-dark-700,
+    ),
+  ),
+  button: (
+    // default
+    button-default-text: (
+      light: $grey-dark-900,
+      dark: $white,
+    ),
+    button-default-border: (
+      light: rgba($grey-dark-700,.4),
+      dark: rgba($white,.4),
+    ),
+    button-default-hover-bg: (
+      light: rgba($grey-light-300,.2),
+      dark: rgba(255,255,255,.1),
+    ),
+    button-default-active-bg: (
+      light: rgba($grey-light-400,.4),
+      dark: rgba(255,255,255,.2),
+    ),
+
+    // button-primary
+    button-primary-bg: (
+      light: $blue,
+      dark: $blue,
+    ),
+    button-primary-hover-bg: (
+      light: $blue-ribbon,
+      dark: $blue-ribbon,
+    ),
+    button-primary-text: (
+      light: $white,
+    ),
+
+    // button-secondary
+    button-secondary-bg: (
+      light: $grey-dark-700,
+      dark: $alice-blue,
+    ),
+    button-secondary-text: (
+      light: $white,
+      dark: $grey-dark-900,
+    ),
+    button-secondary-hover-bg: (
+      light: $grey-dark-900,
+      dark: $grey-light-400,
+    ),
+
+    // button-danger
+    button-danger-bg: (
+      light: $paradise-pink,
+      dark: $paradise-pink,
+    ),
+    button-danger-text: (
+      light: $white,
+      dark: $white,
+    ),
+
+    // button-flat
+    button-flat-text: (
+      light: rgba($grey-dark-900, .5),
+      dark: $white,
+    ),
+    button-flat-hover-bg: (
+      light: rgba($grey-dark-900, .1),
+      dark: rgba($white, .1),
+    ),
+  ),
+
+  type: (
+    type-code-bg: (
+      light: $alice-blue,
+      dark: rgba(0,0,0,.4),
+    ),
+  ),
+
+  input: (
+    input-border: (
+      light: $botticelli,
+      dark: $botticelli,
+    ),
+    input-bg: (
+      light: $white,
+      dark: 'transparent',
+    ),
+    input-text: (
+      light: $grey-dark-900,
+      dark: $grey-light-300,
+    ),
+  ),
+
+  tab: (
+    tab-button-hover-bg: (
+      light: rgba($grey-dark-900, .08)
+    ),
+    tab-button-active-bg: (
+      light: rgba($blue, .1),
+    ),
+  ),
+
+  form: (
+    form-error-message-text: (
+      light: $paradise-pink,
+    ),
+  ),
+);

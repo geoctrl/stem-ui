@@ -153,7 +153,10 @@ const css = k`
     
     &.sui-button--small {
       height: var(--sui-form-height-sm);
+      line-height: var(--sui-form-height-sm);
       padding: 0 8rem;
+      font-size: 12rem;
+      
       
       &.sui-button--icon-only {
         width: var(--sui-form-height-sm);

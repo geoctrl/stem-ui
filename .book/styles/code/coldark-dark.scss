@@ -172,9 +172,9 @@
   /* Code blocks */
   pre[class*="language-"] {
     overflow: auto;
-    padding: 16rem;
-    border-radius: var(--sui-border-radius);
-    margin-bottom: 16rem;
+    //padding: 16rem;
+    //border-radius: var(--sui-border-radius);
+    //margin-bottom: 16rem;
   }
 
   :not(pre) > code[class*="language-"],

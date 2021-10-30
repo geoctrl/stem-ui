@@ -3,7 +3,7 @@
 @import "../variables/variables";
 @import "../variables/utility";
 
-$breakpoints: (
+$breakpointSizeMap: (
   sm: 576,
   md: 768,
   lg: 992,
@@ -11,12 +11,12 @@ $breakpoints: (
   xxl: 1400,
 );
 
-@function getBp($bp) {
-  @return map.get($breakpoints, $bp) * 1rem;
+@function breakpointSize($bp) {
+  @return map.get($breakpointSizeMap, $bp) * 1rem;
 }
 
-@mixin bp($minWidth, $minHeight: null) {
-  @media (min-width: #{math.div(map.get($breakpoints, $minWidth), 100) * $root-font-size}em) {
+@mixin breakpoint($minWidth, $minHeight: null) {
+  @media (min-width: #{math.div(map.get($breakpointSizeMap, $minWidth), 100) * $root-font-size}em) {
     @content;
   }
 }

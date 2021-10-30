@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCss, k } from 'kremling';
 
 export function Menu({ components }) {
   const scope = useCss(css);
-  const [dark, setDark] = useState(false);
-
-  function onDark() {
-    let isDark = !dark;
-    setDark(isDark);
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  }
 
   return (
     <div className="menu" {...scope}>
-      <div className="sui-p-32">
-        <input type="checkbox" onChange={onDark} checked={dark} />
-      </div>
       <div className="nav">
         {components.map((comp) => (
           <div key={comp.name}>

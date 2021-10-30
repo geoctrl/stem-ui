@@ -33,7 +33,7 @@ $use-cases: (
       light: $sun-glow,
     ),
     app-border: (
-      light: $botticelli,
+      light: $grey-light-500,
     ),
     app-link-text: (
       light: $blue,
@@ -77,7 +77,7 @@ $use-cases: (
     // button-secondary
     button-secondary-bg: (
       light: $grey-dark-700,
-      dark: $alice-blue,
+      dark: $blue-shade-300,
     ),
     button-secondary-text: (
       light: $white,
@@ -111,15 +111,15 @@ $use-cases: (
 
   type: (
     type-code-bg: (
-      light: $alice-blue,
+      light: $grey-light-200,
       dark: rgba(0,0,0,.4),
     ),
   ),
 
   input: (
     input-border: (
-      light: $botticelli,
-      dark: $botticelli,
+      light: $blue-shade-400,
+      dark: $blue-shade-400,
     ),
     input-bg: (
       light: $white,

@@ -8,7 +8,14 @@ export function Display({ component, raw }) {
   const [showCode, setShowCode] = useState(false);
   const Comp = component?.default || component;
   return (
-    <div {...scope} className={a('display').m('display--has-code', !!raw && !showCode)}>
+    <div
+      {...scope}
+      className={
+        a('display')
+          .m('display--has-code', !!raw && !showCode)
+          .m('display--show-code', showCode)
+      }
+    >
       <div className="display__view">
         <Comp />
       </div>
@@ -24,14 +31,16 @@ export function Display({ component, raw }) {
           />
         </div>
       )}
-      <div>
-        <Button
-          small
-          iconOnly="code"
-          kind="flat"
-          onClick={() => setShowCode(true)}
-        />
-      </div>
+      {!showCode && (
+        <div className="show-code">
+          <Button
+            small
+            iconOnly="code"
+            kind="flat"
+            onClick={() => setShowCode(true)}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -40,12 +49,15 @@ Display.propTypes = {};
 
 const css = k`
   .display {
+    position: relative;
+    margin-bottom: 16rem;
+    
     .display__view {
-      margin-bottom: 16rem;
       position: relative;
       border: solid 1rem var(--color-display-border);
       padding: 16rem;
       border-radius: var(--sui-border-radius);
+      background-color: white;
       
       .display__view-button button {
         position: absolute;
@@ -60,9 +72,22 @@ const css = k`
     
     .display__code {
       position: relative;
+      padding: 16rem;
+      border-radius: 0 0 var(--sui-border-radius) var(--sui-border-radius);
+      background: var(--sui-color-type-code-bg);
+    }
+    
+    &.display--show-code .display__view {
+      border-radius: var(--sui-border-radius) var(--sui-border-radius) 0 0;
     }
     
     .display__code-close {
+      position: absolute;
+      top: 16rem;
+      right: 16rem;
+    }
+
+    .show-code {
       position: absolute;
       top: 16rem;
       right: 16rem;

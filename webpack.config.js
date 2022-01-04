@@ -5,10 +5,10 @@ const IcosetWebpackPlugin = require('@icoset/icoset-webpack-plugin');
 
 module.exports = ({ production }) => {
   return {
-    entry: path.resolve(__dirname, '.book/index.js'),
+    entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, 'build/'),
+      path: path.resolve(__dirname, 'public'),
       publicPath: '/',
     },
     mode: production
@@ -16,45 +16,49 @@ module.exports = ({ production }) => {
       : 'development',
     devtool: production
       ? 'source-map'
-      : 'eval-source-map',
+      : 'inline-source-map',
     resolve: {
-      extensions: [".js"],
+      extensions: ['.tsx', '.ts', '.js'],
       alias: {
-        '@doc-helpers': path.resolve(__dirname, '.book/doc-helpers/'),
-        'stem-ui/components': path.resolve(__dirname, 'components.js'),
-        'stem-ui/hooks': path.resolve(__dirname, 'hooks.js'),
+        'stem-ui/components': path.resolve(__dirname, 'library/components/index.ts'),
+        // 'stem-ui/hooks': path.resolve(__dirname, 'hooks.js'),
       },
     },
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.tsx?$/,
+          use: 'ts-loader',
           exclude: /node_modules/,
-          resourceQuery: { not: [/raw/] },
-          use: [
-            'babel-loader',
-          ],
-        },
-        {
-          test: /\.mdx$/,
-          exclude: /node_modules/,
-          use: [
-            'ts-loader',
-            '@mdx-js/loader',
-          ],
         },
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
         {
-          test: /\.scss$/,
+          test: /\.styles\.scss$/,
+          exclude: /node_modules/,
+          use: ['kremling-loader', {
+            loader: 'sass-loader',
+            options: {
+              additionalData:
+`@use "sass:map";              
+@import "library/styles/global/breakpoints";
+`,
+              sassOptions: {
+                includePaths: ['library/styles', 'src/styles']
+              },
+            },
+          }],
+        },
+        {
+          test: /main\.scss$/,
           exclude: /node_modules/,
           use: ['style-loader', 'css-loader', {
             loader: 'sass-loader',
             options: {
               sassOptions: {
-                includePaths: ['src/styles']
+                includePaths: ['library/styles', 'src/styles']
               },
             },
           }],
@@ -73,10 +77,10 @@ module.exports = ({ production }) => {
     plugins: [
       new IcosetWebpackPlugin({
         directory: path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-pro/svgs'),
-        icons: require('./.book/icons/icons'),
+        icons: require('./src/icons/icons'),
       }),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, '.book/index.ejs'),
+        template: path.resolve(__dirname, 'src/index.ejs'),
         env: {
           PRODUCTION: production,
         },
@@ -89,7 +93,7 @@ module.exports = ({ production }) => {
     devServer: {
       historyApiFallback: true,
       static: {
-        directory: path.resolve(__dirname, '.book'),
+        directory: path.resolve(__dirname, 'public'),
       },
     },
   }

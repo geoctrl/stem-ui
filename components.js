@@ -1,9 +1,10 @@
-export { Button } from './src/components/button/button.component';
+export { Button } from './library/components/button/button.component.tsx';
+export { Icon } from './library/components/icon/icon.component.tsx';
 
 // layout
-export { CenterContainer } from './src/components/center-container/center-container.component';
-export { Section } from './src/components/center-container/section.component';
+export { CenterContainer } from './library/components/center-container/center-container.component.tsx';
+export { Section } from './library/components/center-container/section.component';
 
-export { Modal } from './src/components/modal/modal.component';
-export { Tab } from './src/components/tab/tab.component';
-export { Toggle } from './src/components/toggle/toggle.component';
+export { Modal } from './library/components/modal/modal.component';
+export { Tab } from './library/components/tab/tab.component';
+export { Toggle } from './library/components/toggle/toggle.component';

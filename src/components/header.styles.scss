@@ -1,0 +1,43 @@
+.header {
+  position: relative;
+
+}
+.header-content {
+  height: 60rem;
+  padding-top: 60rem;
+  background-color: var(--color-header-bg);
+  transition: height 400ms ease;
+  overflow: hidden;
+}
+
+.header-content--home {
+  height: 400rem;
+}
+
+.static-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.static-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header__links a {
+  margin: 0 4rem;
+}
+
+.logo {
+  width: 140rem;
+  fill: var(--color-menu-logo);
+  margin-top: -4rem;
+  flex-grow: 0;
+  margin-right: 24rem;
+}

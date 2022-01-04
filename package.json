@@ -8,7 +8,6 @@
   "scripts": {
     "start": "webpack serve --config webpack.config.js --env env=DEV",
     "build": "webpack --config webpack.config.js --env env=PROD",
-    "lint": "lint-staged",
     "prepare": "husky install"
   },
   "peerDependencies": {
@@ -50,7 +49,6 @@
     "react-router-dom": "^6.2.1"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{ts,tsx}": ["eslint --cache --fix", "prettier --write"]
   }
 }

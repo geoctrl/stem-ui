@@ -25,5 +25,10 @@
         "curly": "warn",
         "block-scoped-var": "warn",
         "camelcase": "warn"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }

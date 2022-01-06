@@ -1,9 +1,32 @@
+
+@include generate((
+  // default
+  button-default-text: (light: $grey-dark-900, dark: $white),
+  button-default-border: (light: rgba($grey-dark-700,.4), dark: rgba($white,.4)),
+  button-default-hover-bg: (light: rgba($grey-light-300,.2), dark: rgba(255,255,255,.1)),
+  button-default-active-bg: (light: rgba($grey-light-400,.4), dark: rgba(255,255,255,.2)),
+  // button-primary
+  button-primary-bg: (light: $blue, dark: $blue),
+  button-primary-hover-bg: (light: $blue-ribbon, dark: $blue-ribbon),
+  button-primary-text: (light: $white),
+  // button-secondary
+  button-secondary-bg: (light: $grey-dark-700, dark: $blue-shade-300),
+  button-secondary-text: (light: $white, dark: $grey-dark-900),
+  button-secondary-hover-bg: (light: $grey-dark-900, dark: $grey-light-400),
+  // button-danger
+  button-danger-bg: (light: $paradise-pink, dark: $paradise-pink),
+  button-danger-text: (light: $white, dark: $white),
+  // button-flat
+  button-flat-text: (light: rgba($grey-dark-900, .5), dark: $white),
+  button-flat-hover-bg: (light: rgba($grey-dark-900, .1), dark: rgba($white, .1)),
+));
+
 .sui-button {
   font-family: inherit;
   font-weight: 600;
   background-color: inherit;
   border: 0;
-  border-radius: 6rem;
+  border-radius: var(--sui-form-border-radius);
   height: var(--sui-form-height);
   padding: 0 16rem;
   font-size: inherit;

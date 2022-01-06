@@ -32,8 +32,6 @@ export function Header() {
         content
       </div>
 
-      <div>test</div>
-
       {/*static header*/}
       <CenterContainer className="static-header">
         <div className="static-header-left">

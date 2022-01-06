@@ -11,16 +11,15 @@ module.exports = ({ production }) => {
       path: path.resolve(__dirname, 'public'),
       publicPath: '/',
     },
-    mode: production
-      ? 'production'
-      : 'development',
-    devtool: production
-      ? 'source-map'
-      : 'inline-source-map',
+    mode: production ? 'production' : 'development',
+    devtool: production ? 'source-map' : 'inline-source-map',
     resolve: {
       extensions: ['.tsx', '.ts', '.js'],
       alias: {
-        'stem-ui/components': path.resolve(__dirname, 'library/components/index.ts'),
+        'stem-ui/components': path.resolve(
+          __dirname,
+          'library/components/index.ts'
+        ),
         // 'stem-ui/hooks': path.resolve(__dirname, 'hooks.js'),
       },
     },
@@ -38,30 +37,37 @@ module.exports = ({ production }) => {
         {
           test: /\.styles\.scss$/,
           exclude: /node_modules/,
-          use: ['kremling-loader', {
-            loader: 'sass-loader',
-            options: {
-              additionalData:
-`@use "sass:map";              
+          use: [
+            'kremling-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                additionalData: `@use "sass:map";
+@import "library/styles/variables/color-utils";
 @import "library/styles/global/breakpoints";
 `,
-              sassOptions: {
-                includePaths: ['library/styles', 'src/styles']
+                sassOptions: {
+                  includePaths: ['library/styles', 'src/styles'],
+                },
               },
             },
-          }],
+          ],
         },
         {
           test: /main\.scss$/,
           exclude: /node_modules/,
-          use: ['style-loader', 'css-loader', {
-            loader: 'sass-loader',
-            options: {
-              sassOptions: {
-                includePaths: ['library/styles', 'src/styles']
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                sassOptions: {
+                  includePaths: ['library/styles', 'src/styles'],
+                },
               },
             },
-          }],
+          ],
         },
         {
           test: /\.(svg|jpg)$/,
@@ -70,14 +76,17 @@ module.exports = ({ production }) => {
         {
           resourceQuery: /raw/,
           type: 'asset/source',
-        }
+        },
       ],
     },
 
     plugins: [
       new IcosetWebpackPlugin({
-        directory: path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-pro/svgs'),
-        icons: require('./src/icons/icons'),
+        directory: path.resolve(
+          __dirname,
+          'node_modules/@fortawesome/fontawesome-pro/svgs'
+        ),
+        icons: require('./src/icons'),
       }),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.ejs'),
@@ -96,5 +105,5 @@ module.exports = ({ production }) => {
         directory: path.resolve(__dirname, 'public'),
       },
     },
-  }
+  };
 };

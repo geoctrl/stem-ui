@@ -2333,10 +2333,10 @@ klona@^2.0.4:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
   integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
 
-kremling-loader@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/kremling-loader/-/kremling-loader-2.0.0.tgz#666a3b489cc5d501c9a6f43c51948f9a0532d4c4"
-  integrity sha512-i+sO7mXhBQLWV5lz3y7ukGyIhcurCxFl/NxHpRyevHi1Ac/qTh6OXDn71QdL/0Jhq6B/rWOun1rCYDHvA2cDng==
+kremling-loader@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/kremling-loader/-/kremling-loader-2.1.0.tgz#00824689591bfcfcbad09733c610f974805dfb6d"
+  integrity sha512-9sinbRrTqnV0cHMAnI0JHOncdOx5XgKW8b8GxsCvM0b08WjWvYm0Rh/cJ22QJLMZA94Nhx45xSjCNTry97ZfJw==
   dependencies:
     loader-utils "^2.0.0"
     postcss-selector-parser "^5.0.0"

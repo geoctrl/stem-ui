@@ -4,16 +4,16 @@ import { Icon } from '../icon/icon.component';
 import styles from './button.styles.scss';
 
 type Props = {
-  anchor: boolean,
-  block: boolean,
-  kind: string,
-  className: string,
-  iconLeft: string,
-  iconRight: string,
-  iconOnly: string,
-  small: boolean,
-  text: string,
-}
+  anchor?: boolean;
+  block?: boolean;
+  kind?: string;
+  className?: string;
+  iconLeft?: string;
+  iconRight?: string;
+  iconOnly?: string;
+  small?: boolean;
+  text: string;
+};
 
 export function Button(props: Props) {
   const {
@@ -33,7 +33,7 @@ export function Button(props: Props) {
   let content: string | React.ReactNode = text;
 
   if (iconOnly) {
-    content = <Icon size={small ? 20 : 24} name={iconOnly} />
+    content = <Icon size={small ? 20 : 24} name={iconOnly} />;
   }
 
   const Tag = anchor ? 'a' : 'button';
@@ -42,14 +42,12 @@ export function Button(props: Props) {
     <Tag
       {...scope}
       role="button"
-      className={
-        a('sui-button')
-          .a(className)
-          .a(`sui-button--${kind}`)
-          .m('sui-button--block', block)
-          .m('sui-button--icon-only', iconOnly)
-          .m('sui-button--small', small)
-      }
+      className={a('sui-button')
+        .a(className)
+        .a(`sui-button--${kind}`)
+        .m('sui-button--block', block)
+        .m('sui-button--icon-only', iconOnly)
+        .m('sui-button--small', small)}
       {...btnProps}
     >
       {content}

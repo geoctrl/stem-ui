@@ -3,45 +3,11 @@
 //stem styles
 @import "library/styles/global/_global";
 @import "library/styles/variables/color";
-@import "library/styles/use-case/default-themes";
 @import "library/styles/variables/utility";
 
 // code styles
 @import "./code/coldark-dark";
 @import "./code/coldark-light";
 
-
-// generate colors from use-cases
-$colorMap: generateColors((
-  //app: (
-  //  app-bg: (light: $grey-light-100, dark: $grey-dark-900),
-  //  header-bg: (light: $grey-light-400, dark: $grey-dark-700),
-  //  menu-bg: (light: $grey-light-100, dark: $grey-dark-700),
-  //  menu-logo: (light: $grey-dark-400, dark: $white),
-  //),
-  //header: (
-  //  header-links-text: $grey-dark-400,
-  //),
-  //display: (
-  //  display-border: (light: $grey-light-500),
-  //),
-), color);
-
-:root {
-  @include var-utility();
-}
-
-:root[data-theme="light"] {
-  @include var-color-light();
-  @include placeColors(map.get($colorMap, 'light'));
-}
-
-:root[data-theme="dark"] {
-  @include var-color-dark();
-  @include placeColors(map.get($colorMap, 'dark'));
-}
-
-body {
-  color: var(--sui-color-app-primary-text);
-  background-color: var(--color-app-bg);
-}
+@include app-color-variables;
+@include utility-variables;

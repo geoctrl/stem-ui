@@ -5,7 +5,7 @@
 $use-cases: (
   type: (
     type-code-bg: (
-      light: $light-200,
+      light: $background-light-200,
       dark: rgba(0,0,0,.4),
     ),
   ),
@@ -20,14 +20,14 @@ $use-cases: (
       dark: 'transparent',
     ),
     input-text: (
-      light: $dark-900,
-      dark: $light-300,
+      light: $background-dark-900,
+      dark: $background-light-300,
     ),
   ),
 
   tab: (
     tab-button-hover-bg: (
-      light: rgba($dark-900, .08)
+      light: rgba($background-dark-900, .08)
     ),
     tab-button-active-bg: (
       light: rgba($blue, .1),

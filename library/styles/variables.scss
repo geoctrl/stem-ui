@@ -1,25 +1,51 @@
 
 // root
-$root-font-size: 6.25;
-$root-font-size-percent: $root-font-size * 1%;
+// --------------------------------------
+$root-font-size: 6.25 !default;
+$root-font-size-percent: $root-font-size * 1% !default;
+$root-prefix: 'sui' !default;
 
 // base
-$base-font-family: 'inter', 'Helvetica', 'Arial', sans-serif;
-$base-font-family-mono: Hack, mono;
-$base-font-size: 14rem;
-$base-font-weight: 400;
-$base-line-height: 1.4;
-$base-border-radius: 10rem;
-$base-transition-duration: 200ms;
+// --------------------------------------
+$base-font-family: 'inter', 'Helvetica', 'Arial', sans-serif !default;
+$base-font-family-mono: Hack, mono !default;
+$base-font-size: 14rem !default;
+$base-font-weight: 400 !default;
+$base-line-height: 1.4 !default;
 
-// color
-$primary: #00C490 !default;
-$primary-100: #00B890 !default;
-$primary-200: #00A380 !default;
-$primary-300: #008F79 !default;
-$primary-400: #007A60 !default;
+// main colors
+// --------------------------------------
+// primary
+$primary-100: #2E74FF !default;
+$primary-200: #1F69FF !default;
+$primary-300: #0A5CFF !default;
+$primary-400: #0052F5 !default;
+$primary-500: #004BE0 !default;
 
-$danger: #EE4266; // do not use as a background with text on it
+// background dark
+$background-dark-900: #56585b !default;
+$background-dark-800: #4c4f52 !default;
+$background-dark-700: #434548 !default;
+$background-dark-600: #3a3c3f !default;
+$background-dark-500: #313336 !default;
+$background-dark-400: #292b2e !default;
+$background-dark-300: #202225 !default;
+$background-dark-200: #181a1d !default;
+$background-dark-100: #0f1215 !default;
+
+// background light
+$background-light-900: #b8bdc1 !default;
+$background-light-800: #c0c5c8 !default;
+$background-light-700: #c8ccd0 !default;
+$background-light-600: #d0d4d7 !default;
+$background-light-500: #d8dcdf !default;
+$background-light-400: #e0e3e6 !default;
+$background-light-300: #e8ebed !default;
+$background-light-200: #f0f2f5 !default;
+$background-light-100: #f8fafc !default;
+
+
+$danger: #EE4266;
 $text-light: #313336;
 $text-dark: #FFFFFF;
 
@@ -32,37 +58,15 @@ $sun-glow: #FFD23F;
 $cadet-blue: #51A3A3;
 $white: #FFFFFF;
 
-// grey dark
-$dark-900: #0f1215;
-$dark-800: #181a1d;
-$dark-700: #202225;
-$dark-600: #292b2e;
-$dark-500: #313336;
-$dark-400: #3a3c3f;
-$dark-300: #434548;
-$dark-200: #4c4f52;
-$dark-100: #56585b;
+// shade colors
+// --------------------------------------
 
-// grey light
-$light-900: #b8bdc1;
-$light-800: #c0c5c8;
-$light-700: #c8ccd0;
-$light-600: #d0d4d7;
-$light-500: #d8dcdf;
-$light-400: #e0e3e6;
-$light-300: #e8ebed;
-$light-200: #f0f2f5;
-$light-100: #f8fafc;
 
-// blue shade
-$blue-shade-900: #B9CDFF;
-$blue-shade-800: #C1D3FF;
-$blue-shade-700: #C9D8FF;
-$blue-shade-600: #D0DEFF;
-$blue-shade-500: #D8E3FF;
-$blue-shade-400: #E0E9FF;
-$blue-shade-300: #E8EEFF;
-$blue-shade-200: #EFF4FF;
+// primary shade
+$blue-shade-500: #B9CDFF;
+$blue-shade-400: #C9D8FF;
+$blue-shade-300: #D8E3FF;
+$blue-shade-200: #E8EEFF;
 $blue-shade-100: #F7F9FF;
 
 

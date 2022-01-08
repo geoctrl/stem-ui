@@ -7,7 +7,7 @@
   padding-top: 40rem;
   height: 100%;
   width: 300rem;
-  background-color: var(--sui-color-menu-bg);
+  background-color: var(--#{$root-prefix}-color-menu-bg);
 }
 
 [data-test="something"] {

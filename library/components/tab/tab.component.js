@@ -47,7 +47,7 @@ Tab.Link = TabLink;
 
 const css = k`
   .sui-tab {
-    border-bottom: solid 1rem var(--sui-color-border);
+    border-bottom: solid 1rem var(--#{$root-prefix}-color-border);
     padding-bottom: 8rem;
     
     button.sui-tab__item,
@@ -56,11 +56,11 @@ const css = k`
       margin-right: 8rem;
       
       &:hover {
-        background-color: var(--sui-color-tab-button-hover-bg);
+        background-color: var(--#{$root-prefix}-color-tab-button-hover-bg);
       }
 
       &.sui-tab__item--active {
-        background-color: var(--sui-color-tab-button-active-bg);
+        background-color: var(--#{$root-prefix}-color-tab-button-active-bg);
       }
     }
   }

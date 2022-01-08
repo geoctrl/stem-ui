@@ -1,41 +1,19 @@
 
-@include generateThemeVariables((
-  // default
-  button-default-text: (light: $dark-900, dark: $white),
-  button-default-border: (light: rgba($dark-700,.4), dark: rgba($white,.4)),
-  button-default-hover-bg: (light: rgba($light-300,.2), dark: rgba(255,255,255,.1)),
-  button-default-active-bg: (light: rgba($light-400,.4), dark: rgba(255,255,255,.2)),
-  // button-primary
-  button-primary-bg: (light: $primary, dark: $primary),
-  button-primary-hover-bg: (light: $primary-100, dark: $primary-100),
-  button-primary-text: (light: $primary),
-  // button-secondary
-  button-secondary-bg: (light: $dark-700, dark: $blue-shade-300),
-  button-secondary-text: (light: $white, dark: $dark-900),
-  button-secondary-hover-bg: (light: $dark-900, dark: $light-400),
-  // button-danger
-  button-danger-bg: (light: $paradise-pink, dark: $paradise-pink),
-  button-danger-text: (light: $white, dark: $white),
-  // button-flat
-  button-flat-text: (light: rgba($dark-900, .5), dark: $white),
-  button-flat-hover-bg: (light: rgba($dark-900, .1), dark: rgba($white, .1)),
-));
-
 .sui-button {
   font-family: inherit;
   font-weight: 600;
   background-color: inherit;
   border: 0;
-  border-radius: var(--sui-form-border-radius);
-  height: var(--sui-form-height);
+  border-radius: v(border-radius-l2);
+  height: v(form-height);
   padding: 0 16rem;
   font-size: inherit;
-  line-height: var(--sui-form-height);
+  line-height: v(form-height);
   text-decoration: none;
   display: inline-flex;
-  transition: box-shadow var(--sui-form-transition-duration) ease,
-  background-color var(--sui-form-transition-duration) ease,
-  color var(--sui-form-transition-duration) ease,
+  transition: box-shadow v(form-transition-duration) ease,
+  background-color v(form-transition-duration) ease,
+  color v(form-transition-duration) ease,
   transform 100ms ease;
   transform: scale(1);
   -webkit-font-smoothing: antialiased;
@@ -46,7 +24,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: var(--sui-form-focus-state);
+    box-shadow: v(form-focus-state);
   }
 
   &:active {
@@ -54,8 +32,8 @@
   }
 
   &.sui-button--icon-only {
-    height: var(--sui-form-height);
-    width: var(--sui-form-height);
+    height: v(form-height);
+    width: v(form-height);
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -63,29 +41,29 @@
 
   // DEFAULT
   &.sui-button--default {
-    border: solid 1rem var(--sui-color-button-default-border);
-    color: var(--sui-color-button-default-text);
+    border: solid 1rem v(color-button-default-border);
+    color: v(color-button-default-text);
 
     &:hover {
-      background-color: var(--sui-color-button-default-bg);
+      background-color: v(color-button-default-bg);
     }
 
     &:focus {
-      border-color: var(--sui-color-button-default-focus-border);
+      border-color: v(color-button-default-focus-border);
     }
   }
 
   // PRIMARY
   &.sui-button--primary {
-    background-color: var(--sui-color-button-primary-bg);
-    color: var(--sui-color-dark-900);
+    background-color: v(color-primary-100);
+    color: v(color-text-light);
 
     &:hover {
-      background-color: var(--sui-color-button-primary-hover-bg);
+      background-color: v(color-primary-200);
     }
 
     &:focus {
-      box-shadow: var(--sui-form-focus-state);
+      box-shadow: v(form-focus-state);
     }
 
     &:active {
@@ -94,26 +72,26 @@
 
   // SECONDARY
   &.sui-button--secondary {
-    background-color: var(--sui-color-button-secondary-bg);
-    color: var(--sui-color-button-secondary-text);
+    background-color: v(color-button-secondary-bg);
+    color: v(color-button-secondary-text);
 
     &:hover {
-      background-color: var(--sui-color-button-secondary-hover-bg);
+      background-color: v(color-button-secondary-hover-bg);
     }
   }
 
   // DANGER
   &.sui-button--danger {
-    background-color: var(--sui-color-button-danger-bg);
-    color: var(--sui-color-button-danger-text);
+    background-color: v(color-button-danger-bg);
+    color: v(color-button-danger-text);
   }
 
   // FLAT
   &.sui-button--flat {
-    color: var(--sui-color-button-flat-text);
+    color: v(color-button-flat-text);
 
     &:hover {
-      background-color: var(--sui-color-button-flat-hover-bg);
+      background-color: v(color-button-flat-hover-bg);
     }
   }
 
@@ -123,14 +101,14 @@
   }
 
   &.sui-button--small {
-    height: var(--sui-form-height-sm);
-    line-height: var(--sui-form-height-sm);
+    height: v(form-height-sm);
+    line-height: v(form-height-sm);
     padding: 0 8rem;
     font-size: 12rem;
 
 
     &.sui-button--icon-only {
-      width: var(--sui-form-height-sm);
+      width: v(form-height-sm);
       padding: 0;
     }
   }

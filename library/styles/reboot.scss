@@ -38,11 +38,11 @@ html, body {
 body {
   margin: 0;
   font-family: $base-font-family;
-  background-color: var(--sui-color-bg);
+  background-color: var(--#{$root-prefix}-color-background-100);
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  color: var(--sui-color-text);
+  color: var(--#{$root-prefix}-color-text);
   text-align: left;
 }
 

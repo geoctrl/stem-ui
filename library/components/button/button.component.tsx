@@ -13,6 +13,7 @@ type Props = {
   iconOnly?: string;
   small?: boolean;
   text: string;
+  [btnProp: string]: any;
 };
 
 export function Button(props: Props) {

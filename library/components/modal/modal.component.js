@@ -45,26 +45,23 @@ export function Modal({ children, show, onClose, onAfterOpen, onAfterClose }) {
     <ModalContext.Provider value={{ onClose: close }}>
       <div
         {...scope}
-        className={
-          a('sui-modal-wrapper')
-            .m('sui-modal-wrapper--animate-out', !show)
-            .m('sui-modal-wrapper--animate-in', show)
-        }
+        className={a('sui-modal-wrapper')
+          .m('sui-modal-wrapper--animate-out', !show)
+          .m('sui-modal-wrapper--animate-in', show)}
       >
-        <div className="sui-modal-backdrop" onClick={isAnimatedIn ? close : null} />
-        <div className="sui-modal">
-          {children}
-        </div>
+        <div
+          className="sui-modal-backdrop"
+          onClick={isAnimatedIn ? close : null}
+        />
+        <div className="sui-modal">{children}</div>
       </div>
     </ModalContext.Provider>
   );
 }
 
-
 Modal.Header = ModalHeader;
 Modal.Body = ModalBody;
 Modal.Footer = ModalFooter;
-
 
 // language=scss
 const css = `
@@ -93,7 +90,7 @@ const css = `
     margin: 32rem auto;
     z-index: 1;
     box-shadow: 0 10rem 50rem rgba(0,0,0,.3), 0 2rem 8px 2px rgba(0,0,0,.07);
-    border-radius: var(--sui-border-radius);
+    border-radius: var(--#{$root-prefix}-border-radius);
     height: 400rem;
     transform-origin: center center;
   }

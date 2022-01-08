@@ -10,11 +10,9 @@ export function Display({ component, raw }) {
   return (
     <div
       {...scope}
-      className={
-        a('display')
-          .m('display--has-code', !!raw && !showCode)
-          .m('display--show-code', showCode)
-      }
+      className={a('display')
+        .m('display--has-code', !!raw && !showCode)
+        .m('display--show-code', showCode)}
     >
       <div className="display__view">
         <Comp />
@@ -56,7 +54,7 @@ const css = k`
       position: relative;
       border: solid 1rem var(--color-display-border);
       padding: 16rem;
-      border-radius: var(--sui-border-radius);
+      border-radius: var(--#{$root-prefix}-border-radius);
       background-color: white;
       
       .display__view-button button {
@@ -73,12 +71,12 @@ const css = k`
     .display__code {
       position: relative;
       padding: 16rem;
-      border-radius: 0 0 var(--sui-border-radius) var(--sui-border-radius);
-      background: var(--sui-color-type-code-bg);
+      border-radius: 0 0 var(--#{$root-prefix}-border-radius) var(--#{$root-prefix}-border-radius);
+      background: var(--#{$root-prefix}-color-type-code-bg);
     }
     
     &.display--show-code .display__view {
-      border-radius: var(--sui-border-radius) var(--sui-border-radius) 0 0;
+      border-radius: var(--#{$root-prefix}-border-radius) var(--#{$root-prefix}-border-radius) 0 0;
     }
     
     .display__code-close {

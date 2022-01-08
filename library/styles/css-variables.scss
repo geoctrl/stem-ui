@@ -1,40 +1,48 @@
+
 @include generateThemeVariables((
-  primary: $primary,
-  text: (light: $dark-900, dark: $light-100),
-  text-secondary: (light: $dark-700),
-  text-hint: (light: $dark-700),
-  text-link: (light: $blue),
-  text-disabled: (light: $dark-300),
-  text-error: (light: $danger),
-  text-warning: (light: $sun-glow),
-  border: (light: $light-500),
-  background: (light: $white, dark: $dark-700),
-  background2: (light: $white, dark: $dark-700),
-  background3: (light: $white, dark: $dark-700),
-  background4: (light: $white, dark: $dark-700),
-  icon: (light: $dark-700),
+  text: (light: $background-dark-100, dark: $background-light-100),
+  text-secondary: (light: $background-dark-300, dark: $background-light-300),
+  text-hint: (light: $background-dark-300, dark: $background-light-300),
+  text-link: $primary-200,
+  text-disabled: (light: $background-dark-700, dark: $background-light-700),
+  border: (light: rgba($background-dark-100, .1), dark: rgba($background-light-100, .1)),
+  background-100: (light: $background-light-100, dark: $background-dark-100),
+  background-200: (light: $background-light-200, dark: $background-dark-200),
+  background-300: (light: $background-light-300, dark: $background-dark-300),
+  background-400: (light: $background-light-400, dark: $background-dark-400),
+  background-500: (light: $background-light-500, dark: $background-dark-500),
+  background-600: (light: $background-light-600, dark: $background-dark-600),
+  background-700: (light: $background-light-700, dark: $background-dark-700),
+  background-800: (light: $background-light-800, dark: $background-dark-800),
+  background-900: (light: $background-light-900, dark: $background-dark-900),
+  icon: (light: $background-dark-300, dark: $background-light-300),
 ));
 
 :root {
-  // forms
-  --sui-form-focus-state: 0 0 0 3rem rgba(var(--sui-color-primary-rgb), .4);
-  --sui-form-focus-state-inset: inset 0 0 0 .3rem rgba(var(--sui-color-primary-rgb), .4);
-  --sui-form-focus-state-dark: 0 0 0 3rem rgba(255, 255, 255, .4);
-  --sui-form-focus-state-dark-inset: inset 0 0 0 3rem rgba(255, 255, 255, .4);
-  --sui-form-transition-duration: 200ms;
-  --sui-form-border-radius: 10rem;
-  --sui-form-height: 36rem;
-  --sui-form-height-sm: 30rem;
-  --sui-form-box-shadow: 0 2rem 3rem rgba(0,0,0,.1);
+  @include generateVariables((
+    color-primary-100: $primary-100,
+    color-primary-200: $primary-200,
+    color-primary-300: $primary-300,
+    color-primary-400: $primary-400,
+    color-primary-500: $primary-500,
+    color-primary-100-rgb: buildRgb($primary-100),
+    color-text-dark: $background-dark-100,
+    color-text-light: $background-light-100,
 
-  // duration
-  --sui-dropdown-duration: 200ms;
+    form-focus-state: 0 0 0 3rem rgba(var(--#{$root-prefix}-color-primary-100-rgb), .4),
+    form-focus-state-inset: inset 0 0 0 .3rem rgba(var(--#{$root-prefix}-color-primary-100-rgb), .4),
+    form-focus-state-dark: 0 0 0 3rem rgba(255, 255, 255, .4),
+    form-focus-state-dark-inset: inset 0 0 0 3rem rgba(255, 255, 255, .4),
+    form-transition-duration: 200ms,
+    form-height: 36rem,
+    form-height-sm: 30rem,
 
-  // box-shadow
-  --sui-box-shadow-l1: 0 10px 30px -24px #{darken(#fff, 30%)};
-  --sui-box-shadow-l2: 0 10px 40px -24px #{darken(#fff, 33%)};
-  --sui-box-shadow-l3: 0 16px 50px -24px #{darken(#fff, 36%)};
+    box-shadow-l1: 0 10px 30px -24px #{darken(#fff, 30%)},
+    box-shadow-l2: 0 10px 40px -24px #{darken(#fff, 33%)},
+    box-shadow-l3: 0 16px 50px -24px #{darken(#fff, 36%)},
 
-  // border-radius
-  --sui-border-radius: #{$base-border-radius};
+    border-radius-l1: 6rem,
+    border-radius-l2: 10rem,
+    border-radius-l3: 14rem,
+  ));
 }

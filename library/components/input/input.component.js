@@ -28,27 +28,27 @@ const css = k`
     }
 
     input {
-      border: solid 1rem var(--sui-color-input-border);
+      border: solid 1rem var(--#{$root-prefix}-color-input-border);
       border-radius: 10rem;
-      height: var(--sui-form-height);
-      box-shadow: var(--sui-form-box-shadow);
+      height: var(--#{$root-prefix}-form-height);
+      box-shadow: var(--#{$root-prefix}-form-box-shadow);
       box-sizing: border-box;
       padding: 0 16rem;
       display: block;
       width: 100%;
       transition: box-shadow 100ms ease;
-      background-color: var(--sui-color-input-bg);
-      color: var(--sui-color-input-text);
+      background-color: var(--#{$root-prefix}-color-input-bg);
+      color: var(--#{$root-prefix}-color-input-text);
       font-size: inherit;
 
       &:focus {
         outline: none;
-        box-shadow: var(--sui-form-focus-state);
+        box-shadow: var(--#{$root-prefix}-form-focus-state);
       }
     }
     
     &:focus-within::after {
-      border-color: var(--sui-color-primary);
+      border-color: var(--#{$root-prefix}-color-primary-100);
     }
     
     &.sui-input--inline {

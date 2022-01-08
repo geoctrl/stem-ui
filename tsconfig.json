@@ -13,7 +13,7 @@
     "moduleResolution": "Node",
     "paths": {
       "stem-ui/components": ["library/components"],
-      "stem-ui/button": ["library/components/button/button.component.tsx"]
+      "stem-ui/extras": ["library/extras"]
     }
   }
 }

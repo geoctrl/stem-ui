@@ -1,24 +1,24 @@
 
-@include generate((
+@include generateThemeVariables((
   // default
-  button-default-text: (light: $grey-dark-900, dark: $white),
-  button-default-border: (light: rgba($grey-dark-700,.4), dark: rgba($white,.4)),
-  button-default-hover-bg: (light: rgba($grey-light-300,.2), dark: rgba(255,255,255,.1)),
-  button-default-active-bg: (light: rgba($grey-light-400,.4), dark: rgba(255,255,255,.2)),
+  button-default-text: (light: $dark-900, dark: $white),
+  button-default-border: (light: rgba($dark-700,.4), dark: rgba($white,.4)),
+  button-default-hover-bg: (light: rgba($light-300,.2), dark: rgba(255,255,255,.1)),
+  button-default-active-bg: (light: rgba($light-400,.4), dark: rgba(255,255,255,.2)),
   // button-primary
-  button-primary-bg: (light: $blue, dark: $blue),
-  button-primary-hover-bg: (light: $blue-ribbon, dark: $blue-ribbon),
-  button-primary-text: (light: $white),
+  button-primary-bg: (light: $primary, dark: $primary),
+  button-primary-hover-bg: (light: $primary-100, dark: $primary-100),
+  button-primary-text: (light: $primary),
   // button-secondary
-  button-secondary-bg: (light: $grey-dark-700, dark: $blue-shade-300),
-  button-secondary-text: (light: $white, dark: $grey-dark-900),
-  button-secondary-hover-bg: (light: $grey-dark-900, dark: $grey-light-400),
+  button-secondary-bg: (light: $dark-700, dark: $blue-shade-300),
+  button-secondary-text: (light: $white, dark: $dark-900),
+  button-secondary-hover-bg: (light: $dark-900, dark: $light-400),
   // button-danger
   button-danger-bg: (light: $paradise-pink, dark: $paradise-pink),
   button-danger-text: (light: $white, dark: $white),
   // button-flat
-  button-flat-text: (light: rgba($grey-dark-900, .5), dark: $white),
-  button-flat-hover-bg: (light: rgba($grey-dark-900, .1), dark: rgba($white, .1)),
+  button-flat-text: (light: rgba($dark-900, .5), dark: $white),
+  button-flat-hover-bg: (light: rgba($dark-900, .1), dark: rgba($white, .1)),
 ));
 
 .sui-button {
@@ -78,7 +78,7 @@
   // PRIMARY
   &.sui-button--primary {
     background-color: var(--sui-color-button-primary-bg);
-    color: var(--sui-color-button-primary-text);
+    color: var(--sui-color-dark-900);
 
     &:hover {
       background-color: var(--sui-color-button-primary-hover-bg);

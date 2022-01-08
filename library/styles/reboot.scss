@@ -1,7 +1,6 @@
 @use 'sass:map';
 
-@import "library/styles/variables/color";
-@import "library/styles/variables/variables";
+@import "library/styles/variables";
 
 *,
 *::before,
@@ -39,11 +38,11 @@ html, body {
 body {
   margin: 0;
   font-family: $base-font-family;
-  background-color: var(--sui-color-app-bg);
+  background-color: var(--sui-color-bg);
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  color: var(--sui-color-app-primary-text);
+  color: var(--sui-color-text);
   text-align: left;
 }
 

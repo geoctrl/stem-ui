@@ -1,13 +1,13 @@
-@use "sass:map";
 
-//stem styles
-@import "library/styles/global/_global";
-@import "library/styles/variables/color";
-@import "library/styles/variables/utility";
+// apply to website-only
+@import "library/styles/reboot";
+@import "library/styles/keyboard-intent";
+
+// apply to website+components
+@import "entry";
+@import "library/styles/css-variables";
+
 
 // code styles
 @import "./code/coldark-dark";
 @import "./code/coldark-light";
-
-@include app-color-variables;
-@include utility-variables;

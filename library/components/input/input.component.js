@@ -2,18 +2,10 @@ import React from 'react';
 import { useCss, k, a } from 'kremling';
 
 export function Input(props) {
-  const {
-    inline,
-  } = props;
+  const { inline } = props;
   const scope = useCss(css);
   return (
-    <div
-      {...scope}
-      className={
-        a('sui-input')
-          .m('sui-input--inline', inline)
-      }
-    >
+    <div {...scope} className={a('sui-input').m('sui-input--inline', inline)}>
       <input />
     </div>
   );
@@ -56,7 +48,7 @@ const css = k`
     }
     
     &:focus-within::after {
-      border-color: var(--sui-color-app-primary);
+      border-color: var(--sui-color-primary);
     }
     
     &.sui-input--inline {

@@ -20,10 +20,7 @@ function TabButton({ id, children }) {
   const { onChange, value } = useContext(TabContext);
   return (
     <Button
-      className={
-        a('sui-tab__item')
-          .m('sui-tab__item--active', value === id)
-      }
+      className={a('sui-tab__item').m('sui-tab__item--active', value === id)}
       onClick={() => onChange(id)}
     >
       {children}
@@ -38,7 +35,9 @@ function TabLink({ children, to }) {
       to={to}
       activeClassName="sui-tab__item--active"
       className={a('sui-tab__item').toString()}
-    >{children}</Button>
+    >
+      {children}
+    </Button>
   );
 }
 
@@ -48,7 +47,7 @@ Tab.Link = TabLink;
 
 const css = k`
   .sui-tab {
-    border-bottom: solid 1rem var(--sui-color-app-border);
+    border-bottom: solid 1rem var(--sui-color-border);
     padding-bottom: 8rem;
     
     button.sui-tab__item,

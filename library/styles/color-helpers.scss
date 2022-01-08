@@ -1,0 +1,39 @@
+@use "sass:list";
+@use "sass:string";
+@use "sass:map";
+
+@mixin generateThemeVariables($use-case) {
+  $returnMap: ();
+  @each $name, $colorMap in $use-case {
+    @if type-of($colorMap) == map {
+      @each $theme, $color in $colorMap {
+        $themeList: map.get($returnMap, $theme);
+        @if $themeList == null {
+          $themeList: ();
+        }
+        $themeList: list.append($themeList, (#{--sui-color-#{$name}}, $color));
+        $returnMap: map.set($returnMap, $theme, $themeList);
+      }
+    } @else {
+      @each $theme in ('light', 'dark') {
+        $themeList: map.get($returnMap, $theme);
+        @if $themeList == null {
+          $themeList: ();
+        }
+        $themeList: list.append($themeList, (#{--sui-color-#{$name}}, $colorMap));
+        $returnMap: map.set($returnMap, $theme, $themeList);
+      }
+    }
+  }
+  @each $themeName, $theme in $returnMap {
+    :root[data-theme="#{$themeName}"] {
+      @each $name, $value in $theme {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@function buildRgb($color) {
+  @return #{#{red($color)},#{green($color)},blue($color)};
+}

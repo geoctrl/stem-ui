@@ -1,0 +1,75 @@
+
+// root
+$root-font-size: 6.25;
+$root-font-size-percent: $root-font-size * 1%;
+
+// base
+$base-font-family: 'inter', 'Helvetica', 'Arial', sans-serif;
+$base-font-family-mono: Hack, mono;
+$base-font-size: 14rem;
+$base-font-weight: 400;
+$base-line-height: 1.4;
+$base-border-radius: 10rem;
+$base-transition-duration: 200ms;
+
+// color
+$primary: #00C490 !default;
+$primary-100: #00B890 !default;
+$primary-200: #00A380 !default;
+$primary-300: #008F79 !default;
+$primary-400: #007A60 !default;
+
+$danger: #EE4266; // do not use as a background with text on it
+$text-light: #313336;
+$text-dark: #FFFFFF;
+
+
+// colors
+$blue: #1E5EFF;
+$blue-ribbon: #0045F5;
+$paradise-pink: #EE4266;
+$sun-glow: #FFD23F;
+$cadet-blue: #51A3A3;
+$white: #FFFFFF;
+
+// grey dark
+$dark-900: #0f1215;
+$dark-800: #181a1d;
+$dark-700: #202225;
+$dark-600: #292b2e;
+$dark-500: #313336;
+$dark-400: #3a3c3f;
+$dark-300: #434548;
+$dark-200: #4c4f52;
+$dark-100: #56585b;
+
+// grey light
+$light-900: #b8bdc1;
+$light-800: #c0c5c8;
+$light-700: #c8ccd0;
+$light-600: #d0d4d7;
+$light-500: #d8dcdf;
+$light-400: #e0e3e6;
+$light-300: #e8ebed;
+$light-200: #f0f2f5;
+$light-100: #f8fafc;
+
+// blue shade
+$blue-shade-900: #B9CDFF;
+$blue-shade-800: #C1D3FF;
+$blue-shade-700: #C9D8FF;
+$blue-shade-600: #D0DEFF;
+$blue-shade-500: #D8E3FF;
+$blue-shade-400: #E0E9FF;
+$blue-shade-300: #E8EEFF;
+$blue-shade-200: #EFF4FF;
+$blue-shade-100: #F7F9FF;
+
+
+// shades
+$deep-champagne: #FDDAAF;
+$linen: #FFF3E6;
+$bright-lilac: #CC9EFF;
+$lavender-web: #F5EDFF;
+$uranian-blue: #A6DFFE;
+//$blue-shade-300: #E4F5FF;

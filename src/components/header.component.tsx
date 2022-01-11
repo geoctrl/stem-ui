@@ -5,7 +5,7 @@ import styles from './header.styles.scss';
 
 import { NavButton, CenterContainer, Toggle } from 'stem-ui/components';
 
-import logo from '../assets/logo.svg?raw';
+import logo from '../assets/logo-color.svg?raw';
 
 export function Header() {
   const scope = useCss(styles);
@@ -48,8 +48,13 @@ export function Header() {
           </div>
         </div>
         <div className="header__actions">
-          <Toggle onChange={onDark} checked={dark} />
-          actions
+          <Toggle
+            onChange={onDark}
+            checked={dark}
+            size="lg"
+            checkedIcon="moon"
+            uncheckedIcon="sun"
+          />
         </div>
       </CenterContainer>
     </div>

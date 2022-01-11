@@ -34,10 +34,13 @@
   margin: 0 4rem;
 }
 
+.header__actions {
+  display: flex;
+}
+
 .logo {
-  width: 140rem;
+  width: 60rem;
   fill: var(--color-menu-logo);
-  margin-top: -4rem;
   flex-grow: 0;
   margin-right: 24rem;
 }

@@ -6,4 +6,6 @@ module.exports = [
   { wrench: 'solid/wrench.svg' },
   { palette: 'solid/palette.svg' },
   { heart: 'solid/heart.svg' },
+  { moon: 'solid/moon.svg' },
+  { sun: 'solid/sun.svg' },
 ];

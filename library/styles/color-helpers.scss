@@ -11,7 +11,7 @@
         @if $themeList == null {
           $themeList: ();
         }
-        $themeList: list.append($themeList, (#{--#{$root-prefix}-color-#{$name}}, $color));
+        $themeList: list.append($themeList, (#{--#{$root-prefix}-#{$name}}, $color));
         $returnMap: map.set($returnMap, $theme, $themeList);
       }
     } @else {
@@ -20,7 +20,7 @@
         @if $themeList == null {
           $themeList: ();
         }
-        $themeList: list.append($themeList, (#{--#{$root-prefix}-color-#{$name}}, $colorMap));
+        $themeList: list.append($themeList, (#{--#{$root-prefix}-#{$name}}, $colorMap));
         $returnMap: map.set($returnMap, $theme, $themeList);
       }
     }

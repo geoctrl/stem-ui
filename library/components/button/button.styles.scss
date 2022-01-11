@@ -11,6 +11,9 @@
   line-height: v(form-height);
   text-decoration: none;
   display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
   transition: box-shadow v(form-transition-duration) ease,
   background-color v(form-transition-duration) ease,
   color v(form-transition-duration) ease,

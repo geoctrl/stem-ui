@@ -1,6 +1,6 @@
 // keyboard intent
 body:not(.keyboard-intent) {
-  div[tabindex="*"]:focus,
+  [role="button"]:focus,
   button:focus,
   a:focus {
     outline: none !important;

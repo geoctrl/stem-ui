@@ -1,6 +1,10 @@
-import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
+import React, {
+  ForwardedRef,
+  forwardRef,
+  FunctionComponent,
+  ReactNode,
+} from 'react';
 import { useCss, a } from 'kremling';
-import { Icon } from '../icon/icon.component';
 import styles from './button.styles.scss';
 
 type Props = {
@@ -12,12 +16,17 @@ type Props = {
   iconRight?: ReactNode;
   iconOnly?: ReactNode;
   link?: boolean;
-  intent?: 'primary' | 'secondary' | 'flat';
-  small?: boolean;
+  intent?: 'default' | 'primary' | 'flat' | 'danger';
+  outline?: boolean;
+  onClick?: () => Event;
+  size?: 'sm' | 'md' | 'lg';
   [btnProp: string]: any;
 };
 
-export function Button(props: Props) {
+export const Button = forwardRef(function Button(
+  props: Props,
+  ref: ForwardedRef<any>
+) {
   const {
     as,
     block,
@@ -27,17 +36,12 @@ export function Button(props: Props) {
     iconRight,
     iconOnly,
     intent = 'default',
-    small,
+    onClick,
+    outline = false,
+    size = 'md',
     ...btnProps
   } = props;
   const scope = useCss(styles);
-
-  // let content: string | React.ReactNode = text;
-
-  // if (iconOnly) {
-  //   content = <Icon size={small ? 20 : 24} name={iconOnly} />;
-  // }
-
   const Tag = as || 'button';
 
   return (
@@ -46,11 +50,14 @@ export function Button(props: Props) {
       role="button"
       className={a('sui-button')
         .a(className)
-        .m('sui-button--block', block)
-        .m('sui-button--icon-only', iconOnly)
-        .a(`sui-button--${intent}`)
-        .m('sui-button--small', small)}
+        .m('--block', block)
+        .m('--icon-only', iconOnly)
+        .m('--outline', outline)
+        .a(`--${intent}`)
+        .a(`--${size}`)}
+      onClick={onClick}
       {...btnProps}
+      ref={ref}
     >
       {iconLeft || iconRight ? (
         <>
@@ -63,4 +70,4 @@ export function Button(props: Props) {
       )}
     </Tag>
   );
-}
+});

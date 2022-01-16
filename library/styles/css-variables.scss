@@ -5,7 +5,7 @@
   color-text-hint: (light: $background-dark-300, dark: $background-light-300),
   color-text-link: $primary-100,
   color-text-disabled: (light: $background-dark-700, dark: $background-light-700),
-  color-border: (light: rgba($background-dark-100, .1), dark: rgba($background-light-100, .1)),
+  color-border: (light: rgba($background-dark-100, .2), dark: rgba($background-light-100, .2)),
   color-background-100: (light: $background-light-100, dark: $background-dark-100),
   color-background-200: (light: $background-light-200, dark: $background-dark-200),
   color-background-300: (light: $background-light-300, dark: $background-dark-300),
@@ -24,7 +24,9 @@
   color-background-reverse-700: (dark: $background-light-700, light: $background-dark-700),
   color-background-reverse-800: (dark: $background-light-800, light: $background-dark-800),
   color-background-reverse-900: (dark: $background-light-900, light: $background-dark-900),
+  color-background-rgb: (light: buildRgb($background-dark-100), dark: buildRgb($background-light-100)),
   color-icon: (light: $background-dark-300, dark: $background-light-300),
+  color-danger: $danger,
 ));
 
 :root {
@@ -34,23 +36,37 @@
     color-primary-300: $primary-300,
     color-primary-400: $primary-400,
     color-primary-500: $primary-500,
-    color-primary-100-rgb: buildRgb($primary-100),
     color-text-dark: $background-dark-100,
     color-text-light: $background-light-100,
 
+    // form
+    // ---------------------------
     form-focus-state: 0 0 0 3rem rgba($primary-100, .4),
     form-focus-state-inset: inset 0 0 0 .3rem rgba($primary-100, .4),
     form-focus-state-dark: 0 0 0 3rem rgba(255, 255, 255, .4),
     form-focus-state-dark-inset: inset 0 0 0 3rem rgba(255, 255, 255, .4),
     form-transition-duration: 200ms,
-    form-height: 36rem,
-    form-vertical-padding: calc(#{v(form-height)} * .5),
-    form-height-sm: 30rem,
+    form-height-sm: 28rem,
+    form-height-md: 36rem,
+    form-height-lg: 44rem,
+    form-text-sm: 12rem,
+    form-text-md: 14rem,
+    form-text-lg: 18rem,
+    form-border-radius-sm: 6rem,
+    form-border-radius-md: 10rem,
+    form-border-radius-lg: 12rem,
+    form-padding-sm: 12rem,
+    form-padding-md: 16rem,
+    form-padding-lg: 18rem,
 
+    // box-shadow
+    // ---------------------------
     box-shadow-l1: 0 10px 30px -24px #{darken(#fff, 30%)},
     box-shadow-l2: 0 10px 40px -24px #{darken(#fff, 33%)},
     box-shadow-l3: 0 16px 50px -24px #{darken(#fff, 36%)},
 
+    // border-radius
+    // ---------------------------
     border-radius-l1: 6rem,
     border-radius-l2: 10rem,
     border-radius-l3: 14rem,

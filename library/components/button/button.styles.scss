@@ -1,14 +1,10 @@
 
 .sui-button {
+  color: v(color-text);
   font-family: inherit;
   font-weight: 600;
   background-color: inherit;
   border: 0;
-  border-radius: v(border-radius-l2);
-  height: v(form-height);
-  padding: 0 16rem;
-  font-size: inherit;
-  line-height: v(form-height);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -34,30 +30,70 @@
     transform: scale(.94);
   }
 
-  &.sui-button--icon-only {
-    height: v(form-height);
-    width: v(form-height);
+  // icons
+  // ---------------------------
+  &.--icon-only {
+    height: v(form-height-md);
+    width: v(form-height-md);
     padding: 0;
     align-items: center;
     justify-content: center;
   }
 
+  // BLOCK
+  // ---------------------------
+  &.--block {
+    display: block;
+    width: 100%;
+  }
+
+  // sizes
+  // ---------------------------
+  &.--sm {
+    height: v(form-height-sm);
+    line-height: v(form-height-sm);
+    padding: 0 v(form-padding-sm);
+    font-size: v(form-text-sm);
+    border-radius: v(form-border-radius-sm);
+  }
+
+  &.--md {
+    height: v(form-height-md);
+    line-height: v(form-height-md);
+    padding: 0 v(form-padding-md);
+    font-size: v(form-text-md);
+    border-radius: v(form-border-radius-md);
+  }
+
+  &.--lg {
+    height: v(form-height-lg);
+    line-height: v(form-height-lg);
+    padding: 0 v(form-padding-lg);
+    font-size: v(form-text-lg);
+    border-radius: v(form-border-radius-lg);
+  }
+
   // DEFAULT
-  &.sui-button--default {
-    border: solid 1rem v(color-button-default-border);
-    color: v(color-button-default-text);
+  // ---------------------------
+  &.--default {
+    background-color: rgba(v(color-background-rgb), .1);
 
     &:hover {
-      background-color: v(color-button-default-bg);
+      background-color: rgba(v(color-background-rgb), .2);
     }
 
     &:focus {
-      border-color: v(color-button-default-focus-border);
+    }
+
+    &.--outline {
+      background-color: transparent;
+      border: solid 1rem v(color-border);
     }
   }
 
   // PRIMARY
-  &.sui-button--primary {
+  // ---------------------------
+  &.--primary {
     background-color: v(color-primary-100);
     color: v(color-text-light);
 
@@ -71,48 +107,26 @@
 
     &:active {
     }
-  }
 
-  // SECONDARY
-  &.sui-button--secondary {
-    background-color: v(color-button-secondary-bg);
-    color: v(color-button-secondary-text);
-
-    &:hover {
-      background-color: v(color-button-secondary-hover-bg);
+    &.--outline {
+      background-color: transparent;
+      border: solid 1rem v(color-primary-100);
+      color: v(color-primary-100);
     }
   }
 
   // DANGER
-  &.sui-button--danger {
-    background-color: v(color-button-danger-bg);
-    color: v(color-button-danger-text);
-  }
+  // ---------------------------
+  &.--danger {
+    background-color: v(color-danger);
+    color: v(color-text-light);
 
-  // FLAT
-  &.sui-button--flat {
-    color: v(color-button-flat-text);
-
-    &:hover {
-      background-color: v(color-button-flat-hover-bg);
+    &.--outline {
+      background-color: transparent;
+      border: solid 1rem v(color-danger);
+      color: v(color-danger);
     }
   }
 
-  &.sui-button--block {
-    display: block;
-    width: 100%;
-  }
 
-  &.sui-button--small {
-    height: v(form-height-sm);
-    line-height: v(form-height-sm);
-    padding: 0 8rem;
-    font-size: 12rem;
-
-
-    &.sui-button--icon-only {
-      width: v(form-height-sm);
-      padding: 0;
-    }
-  }
 }

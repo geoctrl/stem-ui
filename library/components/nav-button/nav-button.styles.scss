@@ -7,7 +7,7 @@
   align-items: center;
   text-decoration: none;
   font-size: 14rem;
-  height: var(--#{$root-prefix}-form-height);
+  height: var(--#{$root-prefix}-form-height-md);
   line-height: 1;
   border: solid 2rem transparent;
   transition: box-shadow var(--#{$root-prefix}-form-transition-duration) ease,

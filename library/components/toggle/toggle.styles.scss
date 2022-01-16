@@ -3,7 +3,7 @@ $space: 4rem;
 
 .sui-toggle {
   display: inline-flex;
-  background-color: v(color-background-700);
+  background-color: rgba(v(color-background-rgb), .2);
   position: relative;
   cursor: pointer;
   transition: background-color ease 200ms;
@@ -51,10 +51,10 @@ $space: 4rem;
     $width: 36rem;
     $height: 20rem;
     $circle-scale: $height - ($space * 2);
-    $translate: #{$width - ($space * 2) - $circle-scale};
+    $translate: $width - ($space * 2) - $circle-scale;
     width: $width;
     height: $height;
-    border-radius: $height / 2;
+    border-radius: math.div($height, 2);
 
     &::after {
       width: calc(#{$height} - #{$space * 2});
@@ -73,7 +73,7 @@ $space: 4rem;
     $translate: #{$width - ($space * 2) - $circle-scale};
     width: $width;
     height: $height;
-    border-radius: $height / 2;
+    border-radius: math.div($height, 2);
 
     .left-icon {
       top: 8rem;
@@ -86,9 +86,8 @@ $space: 4rem;
     }
 
     &::after {
-      $circle-scale-md: $height - ($space * 2);
-      width: $circle-scale-md;
-      height: $circle-scale-md;
+      width: $circle-scale;
+      height: $circle-scale;
     }
 
     &.--active::after {
@@ -103,7 +102,7 @@ $space: 4rem;
     $translate: $width - ($space * 2) - $circle-scale;
     width: 64rem;
     height: $height;
-    border-radius: $height / 2;
+    border-radius: math.div($height, 2);
 
     .left-icon {
       top: 10rem;

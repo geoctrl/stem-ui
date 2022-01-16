@@ -30,7 +30,7 @@ const css = k`
     input {
       border: solid 1rem var(--#{$root-prefix}-color-input-border);
       border-radius: 10rem;
-      height: var(--#{$root-prefix}-form-height);
+      height: var(--#{$root-prefix}-form-height-md);
       box-shadow: var(--#{$root-prefix}-form-box-shadow);
       box-sizing: border-box;
       padding: 0 16rem;

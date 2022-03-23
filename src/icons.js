@@ -1,5 +1,4 @@
 module.exports = [
-  { times: 'regular/times.svg' },
   { code: 'regular/code.svg' },
   { cube: 'regular/cube.svg' },
   { house: 'regular/house.svg' },
@@ -11,5 +10,5 @@ module.exports = [
   { 'chevron-right': 'regular/chevron-right.svg' },
   { 'angle-left': 'regular/angle-left.svg' },
   { 'angle-right': 'regular/angle-right.svg' },
-  { 'exclamation-circle': 'solid/exclamation-circle.svg' },
+  { 'book-skull': 'regular/book-skull.svg' },
 ];

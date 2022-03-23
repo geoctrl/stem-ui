@@ -173,19 +173,19 @@
   pre[class*="language-"] {
     overflow: auto;
     //padding: 16rem;
-    //border-radius: var(--#{$root-prefix}-border-radius);
+    //border-radius: var(--border-radius);
     //margin-bottom: 16rem;
   }
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    background: var(--#{$root-prefix}-color-type-code-bg);
+    background: var(--color-type-code-bg);
   }
 
   /* Inline code */
   :not(pre) > code[class*="language-"] {
     padding: 0.1em 0.3em;
-    border-radius: var(--#{$root-prefix}-border-radius);
+    border-radius: var(--border-radius);
     white-space: normal;
   }
 }

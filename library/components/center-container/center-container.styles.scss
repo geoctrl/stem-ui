@@ -1,9 +1,0 @@
-.sui-center-container {
-  width: 100%;
-  padding: 0 16rem;
-
-  @include breakpoint(xxl) {
-    width: breakpointSize(xxl);
-    margin: auto;
-  }
-}

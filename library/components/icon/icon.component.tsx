@@ -1,26 +1,20 @@
-import React, { ForwardedRef, forwardRef } from 'react'
-import { useCss, a } from 'kremling';
-
-import styles from './icon.styles.scss';
+import React, { ForwardedRef, forwardRef } from 'react';
+import { useCss, k, a } from 'kremling';
 
 type Props = {
-  name: string,
-  className?: string,
-  fill?: string,
-  size?: number | string,
-  style?: React.StyleHTMLAttributes<any>,
+  name: string;
+  className?: string;
+  fill?: string;
+  size?: number | string;
+  style?: React.StyleHTMLAttributes<any>;
 };
 
-export const Icon = forwardRef(function Icon(props: Props, ref: ForwardedRef<any>) {
-  const {
-    name,
-    className,
-    fill,
-    size = 24,
-    style,
-    ...rest
-  } = props;
-  const scope = useCss(styles);
+export const Icon = forwardRef(function Icon(
+  props: Props,
+  ref: ForwardedRef<any>
+) {
+  const { name, className, fill, size = 24, style, ...rest } = props;
+  const scope = useCss(css);
   return (
     <svg
       ref={ref}
@@ -39,3 +33,13 @@ export const Icon = forwardRef(function Icon(props: Props, ref: ForwardedRef<any
     </svg>
   );
 });
+
+const css = k`
+  .sui-icon {
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+    width: 24rem;
+    height: 24rem;
+  }
+`;

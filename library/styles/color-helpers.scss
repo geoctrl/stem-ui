@@ -11,7 +11,7 @@
         @if $themeList == null {
           $themeList: ();
         }
-        $themeList: list.append($themeList, (#{--#{$root-prefix}-#{$name}}, $color));
+        $themeList: list.append($themeList, (#{--#{$name}}, $color));
         $returnMap: map.set($returnMap, $theme, $themeList);
       }
     } @else {
@@ -20,7 +20,7 @@
         @if $themeList == null {
           $themeList: ();
         }
-        $themeList: list.append($themeList, (#{--#{$root-prefix}-#{$name}}, $colorMap));
+        $themeList: list.append($themeList, (#{--#{$name}}, $colorMap));
         $returnMap: map.set($returnMap, $theme, $themeList);
       }
     }
@@ -36,7 +36,7 @@
 
 @mixin generateVariables($values) {
   @each $name, $value in $values {
-    #{--#{$root-prefix}-#{$name}}: #{$value};
+    #{--#{$name}}: #{$value};
   }
 }
 
@@ -45,5 +45,5 @@
 }
 
 @function v($var) {
-  @return #{var(--#{$root-prefix}-#{$var})}
+  @return #{var(--#{$var})}
 }

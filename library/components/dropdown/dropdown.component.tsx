@@ -5,14 +5,13 @@ import React, {
   useCallback,
   ReactElement,
 } from 'react';
-import { useCss, a } from 'kremling';
+import { useCss, k, a } from 'kremling';
 import { createPortal } from 'react-dom';
 import Tippy from '@tippyjs/react/headless';
 import type { Instance, Props as TippyProps, Placement } from 'tippy.js';
 
 import { useIsMounted } from '../../hooks/use-is-mounted.hook';
 import { useContentWidth, useAutoDisable, hideOnEsc } from './dropdown.utils';
-import styles from './dropdown.styles.scss';
 
 type Props = {
   appendTo?: 'parent' | Element | ((ref: Element) => Element);
@@ -45,7 +44,7 @@ export function Dropdown(props: Props) {
     renderTrigger,
   } = props;
 
-  const scope = useCss(styles);
+  const scope = useCss(css);
   const unmountTimeoutRef = useRef();
   const [isOpen, setIsOpen] = useState(false);
   const [instance, setInstance] = useState<Instance | null>(null);
@@ -206,3 +205,13 @@ export function Dropdown(props: Props) {
     </Tippy>
   );
 }
+
+const css = k`
+  .dropdown {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.06), 0 2px 6px 0 rgba(0, 0, 0, 0.26);
+    cursor: default;
+    overflow: auto;
+  }
+`;

@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    ["module:kremling-babel-plugin", {
+      "sassOptions": {
+        "includePaths": ["library/styles"],
+        "additionalData": "@import \"entry\";"
+      }
+    }]
+  ]
+}

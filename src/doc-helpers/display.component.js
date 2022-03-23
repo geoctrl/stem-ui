@@ -54,7 +54,7 @@ const css = k`
       position: relative;
       border: solid 1rem var(--color-display-border);
       padding: 16rem;
-      border-radius: var(--#{$root-prefix}-border-radius);
+      border-radius: var(--border-radius);
       background-color: white;
       
       .display__view-button button {
@@ -71,12 +71,12 @@ const css = k`
     .display__code {
       position: relative;
       padding: 16rem;
-      border-radius: 0 0 var(--#{$root-prefix}-border-radius) var(--#{$root-prefix}-border-radius);
-      background: var(--#{$root-prefix}-color-type-code-bg);
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      background: var(--color-type-code-bg);
     }
     
     &.display--show-code .display__view {
-      border-radius: var(--#{$root-prefix}-border-radius) var(--#{$root-prefix}-border-radius) 0 0;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
     }
     
     .display__code-close {

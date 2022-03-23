@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useCss, a } from 'kremling';
+import { useCss, k, a } from 'kremling';
 
 import { Button, Dropdown, Icon, Toggle } from 'stem-ui/components';
-import styles from './components.styles.scss';
 
 declare type Props = {
   className?: string;
@@ -13,7 +12,7 @@ export function Components(props: Props) {
   const { className } = props;
 
   const [t, setT] = useState(false);
-  const scope = useCss(styles);
+  const scope = useCss(css);
   return (
     <div {...scope} className={a(className).a('temp')}>
       <div>
@@ -21,17 +20,6 @@ export function Components(props: Props) {
         <Button>Default</Button>
         <Button intent="primary">Primary</Button>
         <Button intent="danger">Danger</Button>
-      </div>
-
-      <div>
-        <div>button outline</div>
-        <Button outline>Default</Button>
-        <Button outline intent="primary">
-          Primary
-        </Button>
-        <Button outline intent="danger">
-          Danger
-        </Button>
       </div>
 
       <div>
@@ -50,10 +38,10 @@ export function Components(props: Props) {
         <div>button sizes</div>
         <Button size="sm">small</Button>
         <Button size="md">medium</Button>
-        <Button size="lg">large</Button>
       </div>
 
-      <Button iconLeft={<Icon name="times" />}>hey</Button>
+      <Button iconLeft="book-skull">hey</Button>
+      <Button iconRight="chevron-right">hey</Button>
 
       <Toggle onChange={() => setT(!t)} checked={t} />
 
@@ -65,6 +53,26 @@ export function Components(props: Props) {
         )}
         renderContent={() => <div>hey</div>}
       />
+
+      <div className="card card-1">
+        <div className="card card-2">
+          <div className="card card-3">
+            <div className="card card-4" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
+
+const css = k`
+  .temp {
+    padding: 32rem;
+  }
+
+  .card {
+    border: solid 1rem #D3D3D3;
+    background-color: white;
+    padding: 16px;
+  }
+`;

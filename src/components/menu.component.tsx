@@ -1,11 +1,9 @@
 import React from 'react';
-import { useCss } from 'kremling';
+import { useCss, k } from 'kremling';
 import { NavButton } from 'stem-ui/components';
 
-import styles from './menu.styles.scss';
-
 export function Menu() {
-  const scope = useCss(styles);
+  const scope = useCss(css);
 
   return (
     <div className="menu" {...scope}>
@@ -19,3 +17,31 @@ export function Menu() {
     </div>
   );
 }
+
+const css = k`
+  @import "variables";
+  @import "color-helpers";
+  
+  @include generateThemeVariables((
+    menu-bg: (light: $primary-shade-500, dark: $primary-600),
+  ));
+
+  .menu {
+    padding-top: 40rem;
+    height: 100%;
+    width: 300rem;
+    background-color: var(--color-menu-bg);
+  }
+
+  [data-test="something"] {
+    background-color: red;
+  }
+
+  .nav {
+    padding: 0 16rem;
+
+    > * {
+      margin-bottom: 8rem;
+    }
+  }
+`;

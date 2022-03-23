@@ -38,11 +38,11 @@ html, body {
 body {
   margin: 0;
   font-family: $base-font-family;
-  background-color: var(--#{$root-prefix}-color-background-100);
+  background-color: var(--app-background);
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   line-height: $base-line-height;
-  color: var(--#{$root-prefix}-color-text);
+  color: var(--app-text);
   text-align: left;
 }
 

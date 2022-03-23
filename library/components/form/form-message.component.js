@@ -20,7 +20,7 @@ const css = k`
     font-weight: 500;
     
     &.form-message--error {
-      color: var(--#{$root-prefix}-color-form-error-message-text);
+      color: var(--color-form-error-message-text);
     }
   }
 `;

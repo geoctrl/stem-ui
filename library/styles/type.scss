@@ -20,8 +20,8 @@ h5 {font-size: 17rem;}
 h6 {font-size: 14rem;}
 
 code {
-  background-color: var(--#{$root-prefix}-color-type-code-bg);
-  color: var(--#{$root-prefix}-color-type-code-text);
+  background-color: var(--color-type-code-bg);
+  color: var(--color-type-code-text);
   border-radius: 4rem;
   padding: 1rem 6rem;
   font-size: inherit;

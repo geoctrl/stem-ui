@@ -6,10 +6,8 @@ import { Menu } from '../../components/menu.component';
 // import { CenterContainer } from 'stem-ui/components';
 // import { Menu } from '../components/menu.component';
 
-import styles from './home.styles.scss';
-
 export function Home() {
-  const scope = useCss(styles);
+  const scope = useCss(css);
   return (
     <div {...scope}>
       home
@@ -19,4 +17,4 @@ export function Home() {
   );
 }
 
-Home.propTypes = {};
+const css = k``;

@@ -90,7 +90,7 @@ const css = `
     margin: 32rem auto;
     z-index: 1;
     box-shadow: 0 10rem 50rem rgba(0,0,0,.3), 0 2rem 8px 2px rgba(0,0,0,.07);
-    border-radius: var(--#{$root-prefix}-border-radius);
+    border-radius: var(--border-radius);
     height: 400rem;
     transform-origin: center center;
   }
